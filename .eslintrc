@@ -6,7 +6,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:astro/recommended"
+    "plugin:astro/recommended",
+    "@unocss"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",

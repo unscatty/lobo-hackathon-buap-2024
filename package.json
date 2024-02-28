@@ -8,7 +8,7 @@
     "build": "bunx --bun astro build",
     "build:check": "bunx --bun astro check && bun run build",
     "preview": "bunx --bun astro preview",
-    "format": "prettier --write ./src/**/*.{astro,ts}",
+    "format": "prettier --write ./src/**/*.{astro,ts,js}",
     "lint": "eslint --ext .ts,.astro,.js ./src",
     "astro": "astro"
   },
@@ -21,9 +21,13 @@
     "@types/bun": "^1.0.8",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
+    "@unocss/eslint-config": "^0.58.5",
+    "@unocss/preset-attributify": "^0.58.5",
+    "@unocss/reset": "^0.58.5",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.31.4",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "unocss": "^0.58.5"
   }
 }
