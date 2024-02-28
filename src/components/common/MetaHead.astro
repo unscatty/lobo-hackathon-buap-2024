@@ -1,0 +1,40 @@
+---
+import { type MetaHeadProps } from '@/types/layouts.types'
+
+interface Props extends MetaHeadProps {}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const { title, description, ogImage } = Astro.props
+const titleSlug = 'Lobo Hackathon'
+
+const pageTitle = title ? `${title} | ${titleSlug}` : titleSlug
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content={Astro.generator} />
+
+  <meta name="title" content={pageTitle} />
+  <meta name="description" content={description} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  {ogImage && <meta property="twitter:image" content={ogImage} />}
+
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg" href="/favicon.svg" />
+
+  <title>{pageTitle}</title>
+
+  <slot />
+</head>
