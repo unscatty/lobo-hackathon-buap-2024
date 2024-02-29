@@ -1,8 +1,24 @@
 ---
+import BgGlitch from '@components/main/BgGlitch.astro'
 import MainLayout from '@layouts/Main.astro'
+import { Image } from 'astro:assets'
+import LoboImage from '@assets/lobo_personaje.png'
 ---
 
 <MainLayout title="" description="Main page" classList={['bg-gray-8']}>
-  <h1 text-red>Home</h1>
-  <p>Welcome to the home page</p>
+  <BgGlitch classList="absolute top-0" playbackRate={0.66}>
+    <div class="absolute w-full">
+      <Image
+        src={LoboImage}
+        alt="Personaje Lobo Hackathon BUAP"
+        class:list={[
+          'absolute h-auto mt-4 opacity-65 mix-blend-difference -left-50% -scale-x-100',
+          'sm:-left-40% sm:mt-6',
+          'md:-left-30%',
+          'lg:-left-30%',
+          'xl:-left-10%',
+        ]}  
+      />
+    </div>
+  </BgGlitch>
 </MainLayout>
