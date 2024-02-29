@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import { loadEnv } from 'vite'
+import AstroFontPicker from 'astro-font-picker'
 
 const { SITE_URL } = loadEnv(process.env.NODE_ENV || 'production', process.cwd(), '')
 
@@ -17,5 +18,7 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
+    // Font Picker for Astro's dev toolbar
+    AstroFontPicker(),
   ],
 })
