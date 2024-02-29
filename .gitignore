@@ -25,3 +25,12 @@ pnpm-debug.log*
 
 # VSCode local settings
 .vscode/settings.json
+
+# npm lock file
+package-lock.json
+
+# yarn lock file
+yarn.lock
+
+# pnpm lock file
+pnpm-lock.yaml
