@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "bunx --bun astro dev",
-    "start": "bunx --bun astro dev",
+    "dev": "bunx --bun astro dev --port 3000",
+    "start": "bun run dev",
     "build": "bunx --bun astro build",
     "build:check": "bunx --bun astro check && bun run build",
     "preview": "bunx --bun astro preview",

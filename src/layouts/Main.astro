@@ -1,0 +1,27 @@
+---
+import { type MetaHeadProps } from '@/types/layouts.types'
+import MetaHead from '@components/common/MetaHead.astro'
+import Navbar from '@components/main/Navbar.astro'
+import Footer from '@components/main/Footer.astro'
+
+interface Props extends MetaHeadProps {
+  classList?: string | string[]
+}
+
+const { title, description, ogImage, classList } = Astro.props
+
+const classes = Array.isArray(classList) ? classList : [classList]
+---
+
+<!doctype html>
+<html lang="es" class="h-full">
+  <!-- <Meta -->
+  <MetaHead title={title} description={description} ogImage={ogImage} />
+
+  <body class:list={['h-full', ...classes]}>
+    <Navbar />
+    <!-- Content -->
+    <slot />
+    <Footer />
+  </body>
+</html>
