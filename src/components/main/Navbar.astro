@@ -1,6 +1,62 @@
 ---
+export const navbarItems = [
+  {
+    title: 'Ponentes',
+    href: '#ponentes',
+  },
+  {
+    title: 'Nuestros aliados',
+    href: '#aliados',
+  },
+  {
+    title: 'Agenda',
+    href: '#agenda',
+  },
+  {
+    title: 'Patrocinadores',
+    href: '#patrocinadores',
+  },
+]
 ---
 
 <Fragment>
-  Navbar
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <nav class="bg-none p-4">
+    <div class="mx-auto px-2">
+      <div class="h-10 w-full flex flex-1 items-center justify-between">
+        <div class="flex flex-shrink-0 items-center">
+          <a href="/" class="text-2xl text-white font-black">BUAP</a>
+        </div>
+        <div class="ml-6 block justify-self-end">
+          <div class="flex space-x-4">
+            <!-- Navigation items -->
+            <ul class="flex space-x-4">
+              {
+                navbarItems.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="rounded-md px-3 py-2 text-sm text-gray-300 font-medium"
+                      hover="bg-gray-700 text-white"
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))
+              }
+              <!-- Register button -->
+              <li>
+                <a
+                  href="/registro"
+                  class="rounded-lg bg-white px-6 py-1.75 text-sm text-gray-700 font-bold"
+                  hover="bg-gray-700 text-white"
+                >
+                  Registro
+                </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 </Fragment>

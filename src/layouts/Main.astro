@@ -19,7 +19,9 @@ const classes = Array.isArray(classList) ? classList : [classList]
   <MetaHead title={title} description={description} ogImage={ogImage} />
 
   <body class:list={['h-full', ...classes]}>
-    <Navbar />
+    <header>
+      <Navbar />
+    </header>
     <!-- Content -->
     <slot />
     <Footer />
