@@ -6,6 +6,7 @@ import {
   presetUno,
   transformerAttributifyJsx,
   transformerDirectives,
+  transformerVariantGroup
 } from 'unocss'
 
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
   ],
   transformers: [
     transformerDirectives(),
-    transformerAttributifyJsx()
+    transformerAttributifyJsx(),
+    transformerVariantGroup()
   ],
 })
