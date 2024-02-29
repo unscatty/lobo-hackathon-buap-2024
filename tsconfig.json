@@ -6,6 +6,7 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@assets/*": ["src/assets/*"],
       "@server/*": ["src/server/*"]
     }
   }

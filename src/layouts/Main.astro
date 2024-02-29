@@ -1,8 +1,9 @@
 ---
 import { type MetaHeadProps } from '@/types/layouts.types'
 import MetaHead from '@components/common/MetaHead.astro'
-import Navbar from '@components/main/Navbar.astro'
+import BgGlitch from '@components/main/BgGlitch.astro'
 import Footer from '@components/main/Footer.astro'
+import Navbar from '@components/main/Navbar.astro'
 
 interface Props extends MetaHeadProps {
   classList?: string | string[]
@@ -20,6 +21,7 @@ const classes = Array.isArray(classList) ? classList : [classList]
 
   <body class:list={['h-full', ...classes]}>
     <header>
+      <BgGlitch />
       <Navbar />
     </header>
     <!-- Content -->

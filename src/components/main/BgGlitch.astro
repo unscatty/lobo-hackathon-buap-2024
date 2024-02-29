@@ -1,0 +1,19 @@
+<script>
+  // Reduce the video speed
+  const playbackRate = 0.65
+  const video = document.querySelector('#bg-glitch-video')
+  video.defaultPlaybackRate = playbackRate
+  video.playbackRate = playbackRate
+</script>
+
+<div class="absolute h-50vh max-w-none min-w-full w-auto overflow-hidden -z-1" sm="h-100vh">
+  <video id="bg-glitch-video" autoplay loop muted class="absolute h-full min-w-full object-cover">
+    <source src="/glitch-background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <!-- Video overlay -->
+  <!-- Purple color overlay -->
+  <div class="absolute h-full w-full bg-purple-7/70 mix-blend-color"></div>
+  <!-- Overlay -->
+  <div class="absolute h-full w-full bg-black/45"></div>
+</div>
