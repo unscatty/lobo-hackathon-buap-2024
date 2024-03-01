@@ -3,6 +3,7 @@ import UnoCSS from 'unocss/astro'
 import { loadEnv } from 'vite'
 import AstroFontPicker from 'astro-font-picker'
 import Sitemap from '@astrojs/sitemap'
+import Icon from 'astro-icon'
 
 const { SITE_URL } = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '')
 
@@ -22,5 +23,7 @@ export default defineConfig({
     // Font Picker for Astro's dev toolbar
     AstroFontPicker(),
     Sitemap(),
+    // https://github.com/natemoo-re/astro-icon
+    Icon(),
   ],
 })
