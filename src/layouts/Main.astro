@@ -16,7 +16,9 @@ const classes = Array.isArray(classList) ? classList : [classList]
 <!doctype html>
 <html lang="es" class="h-full">
   <!-- <Meta -->
-  <MetaHead title={title} description={description} ogImage={ogImage} />
+  <MetaHead title={title} description={description} ogImage={ogImage}>
+    <slot name="head-meta" />
+  </MetaHead>
 
   <body class:list={['h-full', ...classes]}>
     <header>

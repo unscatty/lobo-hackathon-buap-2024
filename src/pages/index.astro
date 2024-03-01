@@ -1,11 +1,20 @@
 ---
+import LoboImage from '@assets/lobo_personaje.png'
 import BgGlitch from '@components/main/BgGlitch.astro'
 import MainLayout from '@layouts/Main.astro'
+import { AstroFont } from 'astro-font'
 import { Image } from 'astro:assets'
-import LoboImage from '@assets/lobo_personaje.png'
+import { mainPageFonts } from '@/config/fonts'
 ---
 
 <MainLayout title="" description="Main page" classList={['bg-gray-8']}>
+  <!-- head/meta elements -->
+  <Fragment slot="head-meta">
+    <!-- Fonts -->
+    <AstroFont config={mainPageFonts} />
+  </Fragment>
+
+  <!-- Main content -->
   <BgGlitch classList="absolute top-0" playbackRate={0.66}>
     <div class="absolute w-full">
       <Image
@@ -17,7 +26,7 @@ import LoboImage from '@assets/lobo_personaje.png'
           'md:-left-30%',
           'lg:-left-30%',
           'xl:-left-10%',
-        ]}  
+        ]}
       />
     </div>
   </BgGlitch>
