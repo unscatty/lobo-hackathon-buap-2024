@@ -2,10 +2,11 @@ import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import { loadEnv } from 'vite'
 import AstroFontPicker from 'astro-font-picker'
+import Sitemap from '@astrojs/sitemap'
 
-const { SITE_URL } = loadEnv(process.env.NODE_ENV || 'production', process.cwd(), '')
+const { SITE_URL } = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '')
 
-if (!SITE_URL) {
+if (process.env.NODE_ENV === 'production' && !SITE_URL) {
   throw new Error('SITE_URL is required. Place it inside .env file')
 }
 
@@ -20,5 +21,6 @@ export default defineConfig({
     }),
     // Font Picker for Astro's dev toolbar
     AstroFontPicker(),
+    Sitemap(),
   ],
 })

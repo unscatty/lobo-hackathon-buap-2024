@@ -10,10 +10,12 @@
     "preview": "astro preview",
     "format": "prettier --write ./src/**/*.{astro,ts,js}",
     "lint": "eslint --ext .ts,.astro,.js ./src",
+    "clean": "rimraf dist",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.6",
+    "@astrojs/sitemap": "^3.1.1",
     "add": "^2.0.6",
     "astro": "^4.4.5",
     "astro-font": "^0.0.77",
@@ -32,6 +34,7 @@
     "eslint-plugin-astro": "^0.31.4",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
+    "rimraf": "^5.0.5",
     "unocss": "^0.58.5",
     "vite": "^5.1.4"
   }
