@@ -26,35 +26,36 @@ export const navbarItems = [
         <div class="flex flex-shrink-0 items-center">
           <a href="/" class="text-2xl text-white font-black">BUAP</a>
         </div>
-        <div class="ml-6 block justify-self-end">
-          <div class="flex space-x-4">
-            <!-- Navigation items -->
-            <ul class="flex space-x-4">
-              {
-                navbarItems.map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="rounded-md px-3 py-2 text-sm text-gray-300 font-medium"
-                      hover="bg-gray-700 text-white"
-                    >
-                      {item.title}
-                    </a>
-                  </li>
-                ))
-              }
-              <!-- Register button -->
-              <li>
-                <a
-                  href="/registro"
-                  class="rounded-lg bg-white px-6 py-2 text-sm text-gray-700 font-bold"
-                  hover="bg-gray-700 text-white"
-                >
-                  Registro
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div class="ml-6 justify-self-end">
+          <!-- Navigation items -->
+          <ul class="flex space-x-4">
+            {
+              navbarItems.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="rounded-md px-3 py-2 text-sm text-gray-300 font-medium"
+                    hover="bg-gray-700 text-white"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))
+            }
+            <!-- Register button -->
+            <li>
+              <a
+                href="/registro"
+                class="group/glitch1 glitch1-container rounded-lg bg-transparent px-6 py-2 text-sm text-gray-200 font-bold"
+                ring="2 white"
+                hover="bg-transparent text-white"
+              >
+                <span class="glitch1-glitch-hover" data-glitch-text="Registro">
+                  <span class="glitch1-glitch-text-hover"> Registro </span>
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
