@@ -24,11 +24,15 @@ export const navbarItems = [
     <div class="mx-auto px-2">
       <div class="h-10 w-full flex flex-1 items-center justify-between">
         <div class="flex flex-shrink-0 items-center">
-          <a href="/" class="text-2xl text-white font-black">BUAP</a>
+          <a href="/" class="group/glitch1 text-2xl text-white font-black tracking-wider">
+            <span class="glitch1-glitch-hover" data-glitch-text="BUAP">
+              <span class="glitch1-glitch-text-hover"> BUAP </span>
+            </span>
+          </a>
         </div>
         <div class="ml-6 justify-self-end">
           <!-- Navigation items -->
-          <ul class="flex space-x-4">
+          <ul class="flex items-center space-x-4">
             {
               navbarItems.map((item) => (
                 <li>
@@ -46,13 +50,26 @@ export const navbarItems = [
             <li>
               <a
                 href="/registro"
-                class="group/glitch1 glitch1-container rounded-lg bg-transparent px-6 py-2 text-sm text-gray-200 font-bold"
-                ring="2 white"
-                hover="bg-transparent text-white"
+                class:list={[
+                  'relative',
+                  'text-center',
+                  'tracking-[0.3em]',
+                  'text-sm',
+                  'font-bold',
+                  'mx-auto',
+                  'uppercase',
+                  'px-6',
+                  'py-2',
+                  'border-2',
+                  'border-solid',
+                  'border-white',
+                  'text-white',
+                  'hover:(btn-glitch1 text-black)',
+                  'focus:(btn-glitch1 text-black)',
+                ]}
+                data-glitch-text="Registro"
               >
-                <span class="glitch1-glitch-hover" data-glitch-text="Registro">
-                  <span class="glitch1-glitch-text-hover"> Registro </span>
-                </span>
+                Registro
               </a>
             </li>
           </ul>
