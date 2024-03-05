@@ -20,7 +20,7 @@ const pseudoCommonClasses = [
 ]
 
 export const glitch1Preset: Preset<Theme> = {
-  name: `${name}Preset`,
+  name: `${name}-preset`,
   shortcuts: [
     [containerName, 'visible'],
     // Change color of :after pseudo element
