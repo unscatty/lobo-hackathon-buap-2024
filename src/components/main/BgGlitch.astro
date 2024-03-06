@@ -1,17 +1,15 @@
 ---
-interface Props {
-  classList?: string | string[]
+import type { ClassyComponentProps } from '@/types/astro.types'
+interface Props extends ClassyComponentProps {
   playbackRate?: number
 }
 
-const { classList = 'absolute', playbackRate = 1 } = Astro.props
-
-const classes = Array.isArray(classList) ? classList : [classList]
+const { playbackRate = 1, class: cssClass = 'absolute', 'class:list': cssClassList } = Astro.props
 
 const videoElementId = 'bg-glitch-video'
 ---
 
-<div class:list={['h-50vh max-w-none min-w-full w-auto overflow-hidden -z-1', ...classes]} sm="h-100vh">
+<div class:list={['h-50vh max-w-none min-w-full w-auto overflow-hidden -z-1', cssClass, cssClassList]} sm="h-100vh">
   <video id={videoElementId} autoplay loop muted class="absolute h-full min-w-full object-cover">
     <source src="/glitch-background.mp4" type="video/mp4" />
     Your browser does not support the video tag.

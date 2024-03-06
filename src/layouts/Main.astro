@@ -3,14 +3,11 @@ import { type MetaHeadProps } from '@/types/layouts.types'
 import MetaHead from '@components/common/MetaHead.astro'
 import Footer from '@components/main/Footer.astro'
 import Navbar from '@components/main/Navbar.astro'
+import type { ClassyComponentProps } from '@/types/astro.types'
 
-interface Props extends MetaHeadProps {
-  classList?: string | string[]
-}
+interface Props extends MetaHeadProps, ClassyComponentProps {}
 
-const { title, description, ogImage, classList } = Astro.props
-
-const classes = Array.isArray(classList) ? classList : [classList]
+const { title, description, ogImage, class: cssClass, 'class:list': cssClassList } = Astro.props
 ---
 
 <!doctype html>
@@ -20,7 +17,7 @@ const classes = Array.isArray(classList) ? classList : [classList]
     <slot name="head-meta" />
   </MetaHead>
 
-  <body class:list={['h-full', ...classes]}>
+  <body class:list={['h-full', cssClass, cssClassList]}>
     <header>
       <Navbar />
     </header>

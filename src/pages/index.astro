@@ -7,7 +7,7 @@ import { Image } from 'astro:assets'
 import { mainPageFonts } from '@/config/fonts'
 ---
 
-<MainLayout title="" description="Main page" classList={['bg-gray-8']}>
+<MainLayout title="" description="Main page" class="bg-gray-8">
   <!-- head/meta elements -->
   <Fragment slot="head-meta">
     <!-- Fonts -->
@@ -15,7 +15,7 @@ import { mainPageFonts } from '@/config/fonts'
   </Fragment>
 
   <!-- Main content -->
-  <BgGlitch classList="absolute top-0" playbackRate={0.66}>
+  <BgGlitch class="absolute top-0" playbackRate={0.5}>
     <div class="absolute w-full">
       <Image
         src={LoboImage}
