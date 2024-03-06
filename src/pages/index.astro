@@ -15,19 +15,41 @@ import { mainPageFonts } from '@/config/fonts'
   </Fragment>
 
   <!-- Main content -->
-  <BgGlitch class="absolute top-0" playbackRate={0.5}>
-    <div class="absolute w-full">
+  <BgGlitch class="absolute top-0" playbackRate={0.66} />
+  {/* TODO: portrait and landscape responsive design */}
+  <!-- Landing cover -->
+  <div
+    class:list={[
+      // Default
+      'relative w-full items-center h-50vh',
+      // sm
+      'md:(flex h-screen justify-center -mt-20)',
+      // lg
+      'lg:(flex justify-right)',
+    ]}
+  >
+    <div class:list={['h-full w-full', 'absolute', 'lg:(h-screen relative mt-10 flex-[0_1_40%])']}>
       <Image
         src={LoboImage}
         alt="Personaje Lobo Hackathon BUAP"
+        loading="eager"
         class:list={[
-          'absolute h-auto mt-4 opacity-65 mix-blend-difference -left-50% -scale-x-100',
-          'sm:-left-40% sm:mt-6',
-          'md:-left-30%',
-          'lg:-left-30%',
-          'xl:-left-10%',
+          'relative w-auto h-full opacity-65 mix-blend-difference -scale-x-100',
+          'object-contain',
+          'lg:(-left-20% object-cover overflow-visible)',
         ]}
       />
     </div>
-  </BgGlitch>
+
+    <div class:list={['h-full w-full', 'relative flex flex-col justify-center', 'lg:flex-[0_1_60%]']}>
+      <!-- Overlay -->
+      <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
+      <div z-1>
+        <h1 class="text-center text-4xl text-white font-bold lg:text-7xl md:text-6xl sm:text-5xl xl:text-8xl">
+          Lobo Hackathon BUAP
+        </h1>
+        <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">2024</p>
+      </div>
+    </div>
+  </div>
 </MainLayout>
