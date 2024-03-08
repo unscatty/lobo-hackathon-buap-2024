@@ -6,7 +6,10 @@ export interface UnoColors {
     | string
 }
 
-export const resolveUnoColor = (stringColor: string, ...colorCollections: Array<UnoColors | undefined>) => {
+export const resolveUnoColor = (
+  stringColor: string,
+  ...colorCollections: Array<UnoColors | undefined>
+) => {
   let resolvedColor: string = ''
 
   if (stringColor.startsWith('[') && stringColor.endsWith(']')) {

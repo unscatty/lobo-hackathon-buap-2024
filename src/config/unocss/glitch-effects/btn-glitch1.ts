@@ -1,6 +1,6 @@
 import type { Preset } from 'unocss'
-import type { Theme } from './types'
 import { resolveUnoColor } from '../helpers'
+import type { Theme } from './types'
 
 const name = 'btn-glitch1'
 // const unglitchName = `${name}-unglitch`
@@ -42,7 +42,11 @@ export const btnGlitch1Preset: Preset<Theme> = {
       // Change background, box-shadow and text-shadow color for pseudo elements
       new RegExp(`^${name}-bg-(.+)$`),
       ([_, bg], context) => {
-        const resolvedColor = resolveUnoColor(bg, context.theme.colors, context.theme.backgroundColor)
+        const resolvedColor = resolveUnoColor(
+          bg,
+          context.theme.colors,
+          context.theme.backgroundColor
+        )
 
         if (resolvedColor === '') {
           return ''
@@ -56,7 +60,10 @@ export const btnGlitch1Preset: Preset<Theme> = {
       },
     ],
     // Change text color for pseudo elements
-    [new RegExp(`^${name}-text-(.+)$`), ([_, textColor]) => `before:text-${textColor} after:text-${textColor}`],
+    [
+      new RegExp(`^${name}-text-(.+)$`),
+      ([_, textColor]) => `before:text-${textColor} after:text-${textColor}`,
+    ],
   ],
   theme: {
     animation: {

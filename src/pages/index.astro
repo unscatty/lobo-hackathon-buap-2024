@@ -38,7 +38,13 @@ const loboImageOptimized = await getImage({ src: LoboImage })
       'lg:(flex justify-right)',
     ]}
   >
-    <div class:list={['h-full w-full', 'absolute', 'lg:(h-screen relative mt-10 flex-[0_1_40%])']}>
+    <div
+      class:list={[
+        // Default
+        'h-full w-full absolute',
+        'lg:(h-screen relative mt-10 flex-[0_1_40%])',
+      ]}
+    >
       <Image
         src={LoboImage}
         alt="Personaje Lobo Hackathon BUAP"
@@ -49,11 +55,13 @@ const loboImageOptimized = await getImage({ src: LoboImage })
           'lg:(-left-20% object-cover overflow-visible)',
         ]}
       />
-      <div class="image-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100 lg:-left-20%">
+      <div
+        class="image-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100 lg:-left-20%"
+      >
         {
           Array.from({ length: 3 }).map(() => (
             <div
-              class="bg-contain object-contain image-glitch1-layer lg:(bg-cover object-cover)"
+              class="bg-contain object-contain lg:(bg-cover object-cover) image-glitch1-layer"
               style={`background-image: url("${loboImageOptimized.src}");`}
             />
           ))
@@ -61,14 +69,25 @@ const loboImageOptimized = await getImage({ src: LoboImage })
       </div>
     </div>
 
-    <div class:list={['h-full w-full', 'relative flex flex-col justify-center', 'lg:flex-[0_1_60%]']}>
+    <div class="relative h-full w-full flex flex-col justify-center lg:flex-[0_1_60%]">
       <!-- Overlay -->
       <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
       <div class="z-1">
-        <h1 class="text-center text-4xl text-white font-bold lg:text-7xl md:text-6xl sm:text-5xl xl:text-8xl">
+        <h1
+          class:list={[
+            // Default
+            'text-center text-4xl text-white font-bold',
+            'sm:text-5xl',
+            'md:text-6xl',
+            'lg:text-7xl',
+            'xl:text-8xl',
+          ]}
+        >
           Lobo Hackathon BUAP
         </h1>
-        <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">2024</p>
+        <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">
+          2024
+        </p>
       </div>
     </div>
   </div>
