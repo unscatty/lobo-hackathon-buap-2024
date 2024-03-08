@@ -9,12 +9,12 @@ const effectFlashName = `${name}-animation-flash`
 export const imageGlitch1Preset: Preset<Theme> = {
   name: `${name}-preset`,
   shortcuts: {
-    [`${name}-container`]: 'absolute z-2 inset-0',
+    [`${name}-container`]: 'absolute inset-0',
     [`${name}-layer`]: [
       'object-contain absolute bg-no-repeat bg-[0_0] opacity-65% inset-0',
-      `[&:nth-child(3n+1)]:(translate-x-[-5%] animate-${effect1Name})`,
-      `[&:nth-child(3n+2)]:(translate-x-[3%] translate-y-[3%] animate-${effect2Name})`,
-      `[&:nth-child(3n+3)]:(translate-x-[-5%] animate-${effectFlashName})`,
+      `[&:nth-child(3n+1)]:(-translate-x-5 animate-${effect1Name})`,
+      `[&:nth-child(3n+2)]:(translate-x-3 translate-y-3 animate-${effect2Name})`,
+      `[&:nth-child(3n+3)]:(-translate-x-5 animate-${effectFlashName})`,
     ].join(' '),
   },
   theme: {
@@ -35,7 +35,7 @@ export const imageGlitch1Preset: Preset<Theme> = {
         [effectFlashName]: 'linear',
       },
       keyframes: {
-        [effectFlashName]: `
+        [effectFlashName]: /* css */`
           {
             0% {
               opacity: 0.2;
@@ -45,7 +45,7 @@ export const imageGlitch1Preset: Preset<Theme> = {
               opacity: 0;
             }
           }`,
-        [effect1Name]: `
+        [effect1Name]: /* css */ `
           {
             0% {
               clip-path: polygon(0 0%, 100% 0%, 100% 5%, 0 5%);
@@ -81,7 +81,7 @@ export const imageGlitch1Preset: Preset<Theme> = {
               clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
             }
           }`,
-        [effect2Name]: `
+        [effect2Name]: /* css */`
           {
             0% {
               clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%);

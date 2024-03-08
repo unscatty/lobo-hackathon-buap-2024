@@ -24,7 +24,7 @@ const loboImageOptimized = await getImage({ src: LoboImage })
     class:list={[
       // Default
       'relative w-full items-center h-50vh',
-      // sm
+      // md
       'md:(flex h-screen justify-center -mt-20)',
       // lg
       'lg:(flex justify-right)',
@@ -36,15 +36,18 @@ const loboImageOptimized = await getImage({ src: LoboImage })
         alt="Personaje Lobo Hackathon BUAP"
         loading="eager"
         class:list={[
-          'relative w-auto h-full opacity-65 mix-blend-difference -scale-x-100',
+          'relative w-auto h-full mx-auto opacity-65 mix-blend-difference -scale-x-100',
           'object-contain',
           'lg:(-left-20% object-cover overflow-visible)',
         ]}
       />
-      <div class="image-glitch1-container h-auto w-240 -scale-x-100">
+      <div class="image-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100 lg:-left-20%">
         {
           Array.from({ length: 3 }).map(() => (
-            <div class="image-glitch1-layer" style={`background-image: url("${loboImageOptimized.src}");`} />
+            <div
+              class="bg-contain object-contain image-glitch1-layer lg:(bg-cover object-cover)"
+              style={`background-image: url("${loboImageOptimized.src}");`}
+            />
           ))
         }
       </div>
