@@ -12,12 +12,10 @@ const pseudoCommonClasses = [
   'absolute',
   'w-full',
   'text-black',
-  'px-0',
-  'py-2',
-  'left-0',
-  'top-0',
-  '[-webkit-clip:rect(0px,0px,0px,0px)]',
-  '[clip:rect(0px,0px,0px,0px)]',
+  'flex',
+  'items-center',
+  'justify-center',
+  'inset-0',
   'bg-white',
 ]
 
@@ -28,20 +26,15 @@ export const btnGlitch1Preset: Preset<Theme> = {
       name,
       [
         'transition-all',
+        'relative',
         'duration-[0.2s]',
         'ease-[ease]',
-        'before:left-[-3px]',
-        'before:shadow-[2px_0_#fff]',
-        'before:-top-0.5',
-        'after:shadow-[-1px_0_#fff]',
-        'after:left-0.5',
-        'after:-bottom-0.5',
-        `before:(animate-${keyframesName} animate-duration-1.5s animate-alternate-reverse)`,
-        `after:(animate-${keyframesName} animate-duration-2s animate-alternate-reverse)`,
+        'before:(-left-3% -top-9% shadow-[2px_0_#fff] [text-shadow:2px_0_#fff])',
+        `before:(animate-${keyframesName} animate-duration-500ms animate-alternate-reverse)`,
         `before:(${pseudoCommonClasses.join(' ')})`,
+        'after:(left-3% -bottom-9% shadow-[-1px_0_#fff] [text-shadow:-1px_0_#fff])',
+        `after:(animate-${keyframesName} animate-duration-800ms animate-alternate-reverse)`,
         `after:(${pseudoCommonClasses.join(' ')})`,
-        'before:[text-shadow:2px_0_#fff]',
-        'after:[text-shadow:-1px_0_#fff]',
         'bg-white',
       ].join(' '),
     ],
@@ -77,61 +70,47 @@ export const btnGlitch1Preset: Preset<Theme> = {
         [keyframesName]: 'infinite',
       },
       keyframes: {
-        [keyframesName]: `
+        [keyframesName]: /* css */ `
           {
             0% {
-              clip: rect(-3px, 600px, 0px, 0px);
+              clip-path: inset(0% 0 0% 0);
+              opacity: 0%;
             }
-            5.88235% {
-              clip: rect(0px, 600px, 0px, 0px);
-            }
-            11.76471% {
-              clip: rect(-3px, 600px, 0px, 0px);
+            17.5% {
+              clip-path: inset(0% 0 0% 0);
+              opacity: 0%;
             }
             17.64706% {
-              clip: rect(-3px, 600px, 0px, 0px);
+              clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 0% 10%);
+              opacity: 100%;
             }
-            23.52941% {
-              clip: rect(100px, 600px, 100px, 0px);
+            26.346213% {
+              clip-path: polygon(0% 94%, 100% 94%, 100% 100%, 0% 100%);
+              opacity: 100%;
             }
-            29.41176% {
-              clip: rect(0px, 600px, 600px, 0px);
+            26.5% {
+              opacity: 0%;
             }
-            35.29412% {
-              clip: rect(100px, 600px, 0px, 0px);
+            41% {
+              opacity: 0%;
             }
             41.17647% {
-              clip: rect(0px, 600px, 600px, 0px);
+              clip-path: polygon(0% 95%, 100% 95%, 100% 100%, 0% 100%);
+              opacity: 100%;
             }
             47.05882% {
-              clip: rect(100px, 600px, 0px, 0px);
+              clip-path: polygon(0% 100%, 100% 100%, 100% 10%, 0% 10%);
+              opacity: 100%;
             }
             52.94118% {
-              clip: rect(-3px, 600px, 0px, 0px);
+              clip-path: polygon(0% 95%, 100% 95%, 100% 100%, 0% 100%);
+              opacity: 100%;
             }
-            58.82353% {
-              clip: rect(100px, 450px, 100px, 0px);
-            }
-            64.70588% {
-              clip: rect(0px, 450px, 0px, 0px);
-            }
-            70.58824% {
-              clip: rect(100px, 450px, 100px, 0px);
-            }
-            76.47059% {
-              clip: rect(0px, 450px, 0px, 0px);
-            }
-            82.35294% {
-              clip: rect(0px, 450px, 0px, 0px);
-            }
-            88.23529% {
-              clip: rect(0px, 450px, 0px, 0px);
-            }
-            94.11765% {
-              clip: rect(0px, 450px, 0px, 0px);
+            53% {
+              opacity: 0%;
             }
             100% {
-              clip: rect(0px, 450px, 0px, 0px);
+              opacity: 0%;
             }
           }`,
       },
