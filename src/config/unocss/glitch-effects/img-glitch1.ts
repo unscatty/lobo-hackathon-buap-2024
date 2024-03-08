@@ -1,7 +1,7 @@
 import type { Preset } from 'unocss'
 import type { Theme } from './types'
 
-const name = 'image-glitch1'
+const name = 'img-glitch1'
 const effect1Name = `${name}-animation1`
 const effect2Name = `${name}-animation2`
 const effectFlashName = `${name}-animation-flash`
