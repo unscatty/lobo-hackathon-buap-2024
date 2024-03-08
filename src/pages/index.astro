@@ -57,7 +57,7 @@ const loboImageOptimized = await getImage({ src: LoboImage })
       />
       <div
         class:list={[
-          'image-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100',
+          'img-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100',
           'xl:left-20%',
           '2xl:left-0',
         ]}
@@ -65,7 +65,7 @@ const loboImageOptimized = await getImage({ src: LoboImage })
         {
           Array.from({ length: 3 }).map(() => (
             <div
-              class="bg-contain object-contain lg:(bg-cover object-cover) image-glitch1-layer"
+              class="bg-contain object-contain lg:(bg-cover object-cover) img-glitch1-layer"
               style={`background-image: url("${loboImageOptimized.src}");`}
             />
           ))
