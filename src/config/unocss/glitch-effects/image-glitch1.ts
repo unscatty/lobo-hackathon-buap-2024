@@ -12,9 +12,9 @@ export const imageGlitch1Preset: Preset<Theme> = {
     [`${name}-container`]: 'absolute inset-0',
     [`${name}-layer`]: [
       'object-contain absolute bg-no-repeat bg-[0_0] opacity-65% inset-0',
-      `[&:nth-child(3n+1)]:(-translate-x-5 animate-${effect1Name})`,
-      `[&:nth-child(3n+2)]:(translate-x-3 translate-y-3 animate-${effect2Name})`,
-      `[&:nth-child(3n+3)]:(-translate-x-5 animate-${effectFlashName})`,
+      `[&:nth-child(3n+1)]:(-translate-x-5% animate-${effect1Name})`,
+      `[&:nth-child(3n+2)]:(translate-x-3% translate-y-3% animate-${effect2Name})`,
+      `[&:nth-child(3n+3)]:(-translate-x-5% animate-${effectFlashName})`,
     ].join(' '),
   },
   theme: {

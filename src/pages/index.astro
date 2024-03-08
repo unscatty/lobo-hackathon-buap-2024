@@ -42,7 +42,7 @@ const loboImageOptimized = await getImage({ src: LoboImage })
       class:list={[
         // Default
         'h-full w-full absolute',
-        'lg:(h-screen relative mt-10 flex-[0_1_40%])',
+        'lg:(h-screen relative mt-10 flex-[0_1_40%] -left-5%)',
       ]}
     >
       <Image
@@ -52,11 +52,15 @@ const loboImageOptimized = await getImage({ src: LoboImage })
         class:list={[
           'relative w-auto h-full mx-auto opacity-65 mix-blend-difference -scale-x-100',
           'object-contain',
-          'lg:(-left-20% object-cover overflow-visible)',
+          'lg:(object-cover overflow-visible)',
         ]}
       />
       <div
-        class="image-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100 lg:-left-20%"
+        class:list={[
+          'image-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100',
+          'xl:left-20%',
+          '2xl:left-0',
+        ]}
       >
         {
           Array.from({ length: 3 }).map(() => (
