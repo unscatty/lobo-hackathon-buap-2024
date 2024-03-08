@@ -9,7 +9,7 @@ const { playbackRate = 1, class: cssClass = 'absolute', 'class:list': cssClassLi
 const videoElementId = 'bg-glitch-video'
 ---
 
-<div class:list={['h-50vh w-full max-w-full w-auto overflow-hidden z-0', cssClass, cssClassList]} sm="h-100vh">
+<div class:list={[cssClass, cssClassList]}>
   <video id={videoElementId} autoplay loop muted class="absolute h-full min-w-full object-cover">
     <source src="/glitch-background.mp4" type="video/mp4" />
     Your browser does not support the video tag.

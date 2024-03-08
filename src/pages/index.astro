@@ -1,10 +1,10 @@
 ---
+import { mainPageFonts } from '@/config/fonts'
 import LoboImage from '@assets/lobo_personaje.png'
 import BgGlitch from '@components/main/BgGlitch.astro'
 import MainLayout from '@layouts/Main.astro'
 import { AstroFont } from 'astro-font'
 import { Image, getImage } from 'astro:assets'
-import { mainPageFonts } from '@/config/fonts'
 
 const loboImageOptimized = await getImage({ src: LoboImage })
 ---
@@ -17,7 +17,15 @@ const loboImageOptimized = await getImage({ src: LoboImage })
   </Fragment>
 
   <!-- Main content -->
-  <BgGlitch class="absolute top-0" playbackRate={0.66} />
+  <BgGlitch
+    playbackRate={0.66}
+    class:list={[
+      // Default
+      'absolute top-0 h-50vh w-full max-w-full w-auto overflow-hidden z-0',
+      // sm
+      'sm:(h-100vh)',
+    ]}
+  />
   {/* TODO: portrait and landscape responsive design */}
   <!-- Landing cover -->
   <div
@@ -56,7 +64,7 @@ const loboImageOptimized = await getImage({ src: LoboImage })
     <div class:list={['h-full w-full', 'relative flex flex-col justify-center', 'lg:flex-[0_1_60%]']}>
       <!-- Overlay -->
       <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
-      <div z-1>
+      <div class="z-1">
         <h1 class="text-center text-4xl text-white font-bold lg:text-7xl md:text-6xl sm:text-5xl xl:text-8xl">
           Lobo Hackathon BUAP
         </h1>
