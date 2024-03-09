@@ -35,7 +35,7 @@ export const imgGlitch1Preset: Preset<Theme> = {
         [effectFlashName]: 'linear',
       },
       keyframes: {
-        [effectFlashName]: /* css */`
+        [effectFlashName]: /* css */ `
           {
             0% {
               opacity: 0.2;
@@ -81,7 +81,7 @@ export const imgGlitch1Preset: Preset<Theme> = {
               clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
             }
           }`,
-        [effect2Name]: /* css */`
+        [effect2Name]: /* css */ `
           {
             0% {
               clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%);

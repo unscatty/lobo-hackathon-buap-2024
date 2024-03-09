@@ -1,0 +1,6 @@
+# Bun lockfile
+bun.lockb
+
+# Evertyhing outside src folder
+/*
+!/src/

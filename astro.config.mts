@@ -29,7 +29,6 @@ export default defineConfig({
     Icon(),
 
     // React integration
-    // TODO: react eslint and prettier config
     React(),
 
     // Vue integration
