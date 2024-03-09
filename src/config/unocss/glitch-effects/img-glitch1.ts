@@ -6,7 +6,7 @@ const effect1Name = `${name}-animation1`
 const effect2Name = `${name}-animation2`
 const effectFlashName = `${name}-animation-flash`
 
-export const imageGlitch1Preset: Preset<Theme> = {
+export const imgGlitch1Preset: Preset<Theme> = {
   name: `${name}-preset`,
   shortcuts: {
     [`${name}-container`]: 'absolute inset-0',
