@@ -35,13 +35,16 @@ export const navbarItems = [
           <ul class="flex items-center space-x-4">
             {
               navbarItems.map((item) => (
-                <li>
+                <li class="group">
                   <a
                     href={item.href}
                     class="rounded-md px-3 py-2 text-sm text-gray-300 font-medium"
                     hover="bg-gray-700 text-white"
                   >
-                    {item.title}
+                    <span>
+                      {item.title}
+                      <span class="invisible group-hover:animate-blink">_</span>
+                    </span>
                   </a>
                 </li>
               ))
