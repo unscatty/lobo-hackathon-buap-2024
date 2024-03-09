@@ -1,0 +1,87 @@
+---
+import LoboImage from '@assets/lobo_personaje.png'
+import BgGlitch from '@components/main/BgGlitch.astro'
+import { Image, getImage } from 'astro:assets'
+
+const loboImageOptimized = await getImage({ src: LoboImage })
+---
+
+<BgGlitch
+  playbackRate={0.66}
+  class:list={[
+    // Default
+    'absolute top-0 h-50vh w-full max-w-full w-auto overflow-hidden z-0',
+    // sm
+    'sm:(h-100vh)',
+  ]}
+/>
+{/* TODO: portrait and landscape responsive design */}
+
+<!-- Landing cover -->
+<div
+  class:list={[
+    // Default
+    'relative w-full items-center h-50vh',
+    // md
+    'md:(flex h-screen justify-center -mt-20)',
+    // lg
+    'lg:(flex justify-right)',
+  ]}
+>
+  <div
+    class:list={[
+      // Default
+      'h-full w-full absolute',
+      'lg:(h-screen relative mt-10 flex-[0_1_40%] -left-5%)',
+    ]}
+  >
+    <Image
+      src={LoboImage}
+      alt="Personaje Lobo Hackathon BUAP"
+      loading="eager"
+      class:list={[
+        'relative w-auto h-full mx-auto opacity-65 mix-blend-difference -scale-x-100',
+        'object-contain',
+        'lg:(object-cover overflow-visible)',
+      ]}
+    />
+    <div
+      class:list={[
+        'img-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100',
+        'xl:left-20%',
+        '2xl:left-0',
+      ]}
+    >
+      {
+        Array.from({ length: 3 }).map(() => (
+          <div
+            class="bg-contain object-contain lg:(bg-cover object-cover) img-glitch1-layer"
+            style={`background-image: url("${loboImageOptimized.src}");`}
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="relative h-full w-full flex flex-col justify-center lg:flex-[0_1_60%]">
+    <!-- Overlay -->
+    <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
+    <div class="z-1">
+      <h1
+        class:list={[
+          // Default
+          'text-center text-4xl text-white font-bold',
+          'sm:text-5xl',
+          'md:text-6xl',
+          'lg:text-7xl',
+          'xl:text-8xl',
+        ]}
+      >
+        Lobo Hackathon BUAP
+      </h1>
+      <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">
+        2024
+      </p>
+    </div>
+  </div>
+</div>
