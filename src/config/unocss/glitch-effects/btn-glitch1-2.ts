@@ -1,6 +1,6 @@
 import type { DynamicShortcutMatcher, Preset } from 'unocss'
 import { resolveUnoColor } from '../helpers'
-import type { Theme } from './types'
+import type { Theme } from '../types'
 
 const name1 = 'btn-glitch1'
 const keyframesName1 = `${name1}--glitch-effect`
