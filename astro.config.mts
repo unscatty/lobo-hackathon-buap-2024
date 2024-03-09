@@ -1,5 +1,6 @@
 import React from '@astrojs/react'
 import Sitemap from '@astrojs/sitemap'
+import Vue from '@astrojs/vue'
 import AstroFontPicker from 'astro-font-picker'
 import Icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
@@ -30,5 +31,13 @@ export default defineConfig({
     // React integration
     // TODO: react eslint and prettier config
     React(),
+
+    // Vue integration
+    Vue({
+      script: {
+        defineModel: true,
+        propsDestructure: true,
+      },
+    }),
   ],
 })
