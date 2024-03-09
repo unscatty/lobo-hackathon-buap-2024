@@ -8,13 +8,14 @@
     "build": "astro build",
     "build:check": "astro check && nr build",
     "preview": "astro preview",
-    "format": "prettier --write ./src/**/*.{astro,ts,js}",
-    "lint": "eslint --ext .ts,.astro,.js ./src",
+    "format": "prettier --write ./src/**/*.{astro,ts,js,jsx,tsx}",
+    "lint": "eslint --ext .ts,.astro,.js,.jsx,.tsx ./src",
     "clean": "rimraf dist",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.6",
+    "@astrojs/react": "^3.0.10",
     "@astrojs/sitemap": "^3.1.1",
     "astro": "^4.4.15",
     "astro-font": "^0.0.77",

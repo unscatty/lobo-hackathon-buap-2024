@@ -1,3 +1,4 @@
+import React from '@astrojs/react'
 import Sitemap from '@astrojs/sitemap'
 import AstroFontPicker from 'astro-font-picker'
 import Icon from 'astro-icon'
@@ -25,5 +26,9 @@ export default defineConfig({
     Sitemap(),
     // https://github.com/natemoo-re/astro-icon
     Icon(),
+
+    // React integration
+    // TODO: react eslint and prettier config
+    React(),
   ],
 })
