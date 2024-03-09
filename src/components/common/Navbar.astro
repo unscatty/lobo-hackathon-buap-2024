@@ -24,7 +24,7 @@ export const navbarItems = [
     <div class="mx-auto px-2">
       <div class="h-10 w-full flex flex-1 items-center justify-between">
         <div class="flex flex-shrink-0 items-center">
-          <a href="/" class="group/glitch1 text-2xl text-white font-black tracking-wider">
+          <a href="/" class="group/glitch1 text-2xl text-primary font-black tracking-wider">
             <span class="glitch1-glitch-hover" data-glitch-text="BUAP">
               <span class="glitch1-glitch-text-hover"> BUAP </span>
             </span>
@@ -38,8 +38,8 @@ export const navbarItems = [
                 <li class="group">
                   <a
                     href={item.href}
-                    class="rounded-md px-3 py-2 text-sm text-gray-300 font-medium"
-                    hover="bg-gray-700 text-white"
+                    class="rounded-md px-3 py-2 text-sm text-primary-600 font-medium"
+                    hover="bg-base-700/65 text-primary rounded-none"
                   >
                     <span>
                       {item.title}
@@ -66,8 +66,8 @@ export const navbarItems = [
                   'py-2',
                   'border-2',
                   'border-solid',
-                  'border-white',
-                  'text-white',
+                  'border-primary',
+                  'text-primary',
                   'hover:(btn-glitch1 text-black)',
                   'focus:(btn-glitch1 text-black)',
                 ]}

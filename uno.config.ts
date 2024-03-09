@@ -8,14 +8,15 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import { variantInherit, variantScoped, variantWeakInherit } from './src/config/unocss/variants'
 import { allFonts } from './src/config/fonts'
+import { colorPalette } from './src/config/unocss/color-palette'
 import {
+  btnGlitch1_2Preset,
   glitch1Preset,
   imgGlitch1Preset,
-  btnGlitch1_2Preset,
 } from './src/config/unocss/glitch-effects'
 import { type Theme } from './src/config/unocss/types'
+import { variantInherit, variantScoped, variantWeakInherit } from './src/config/unocss/variants'
 
 // Convert the fonts array to an object
 const customFonts: Record<string, string> = {}
@@ -25,6 +26,7 @@ for (const font of allFonts) {
 
 export default defineConfig<Theme>({
   theme: {
+    colors: colorPalette,
     fontFamily: {
       ...customFonts,
     },
