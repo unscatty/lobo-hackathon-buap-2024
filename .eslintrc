@@ -15,9 +15,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {
-    "vue/multi-word-component-names": "off"
-  },
   "overrides": [
     {
       "files": [
@@ -73,6 +70,29 @@
         "*.astro/*.js"
       ],
       "parser": "@typescript-eslint/parser"
+    },
+    // Vue parser config
+    {
+      "files": [
+        "*.vue"
+      ],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      },
+      "extends": [
+        "plugin:vue/vue3-recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+      ],
+      "rules": {
+        "no-mixed-spaces-and-tabs": [
+          "warn",
+          "smart-tabs"
+        ],
+        "multi-word-component-names": "off"
+      }
     }
   ]
 }

@@ -8,7 +8,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
-import { allFonts } from './src/config/fonts'
+import { allFonts, fontLaOriental, fontAnta } from './src/config/fonts'
 import { colorPalette } from './src/config/unocss/color-palette'
 import {
   btnGlitch1_2Preset,
@@ -17,6 +17,7 @@ import {
 } from './src/config/unocss/glitch-effects'
 import { type Theme } from './src/config/unocss/types'
 import { variantInherit, variantScoped, variantWeakInherit } from './src/config/unocss/variants'
+import { allIcons } from './src/config/unocss/icons'
 
 // Convert the fonts array to an object
 const customFonts: Record<string, string> = {}
@@ -24,11 +25,15 @@ for (const font of allFonts) {
   customFonts[font.name.toLowerCase().replaceAll(' ', '-')] = [font.name, font.fallback].join(',')
 }
 
+const iconsSafelist = allIcons.flatMap((iconSet) => Object.values(iconSet))
+
 export default defineConfig<Theme>({
   theme: {
     colors: colorPalette,
     fontFamily: {
       ...customFonts,
+      title: [fontLaOriental.name, fontLaOriental.fallback].join(','),
+      sub: [fontAnta.name, fontAnta.fallback].join(','),
     },
     animation: {
       durations: {
@@ -64,4 +69,5 @@ export default defineConfig<Theme>({
   ],
   transformers: [transformerDirectives(), transformerAttributifyJsx(), transformerVariantGroup()],
   variants: [variantInherit, variantWeakInherit, variantScoped],
+  safelist: [...iconsSafelist],
 })

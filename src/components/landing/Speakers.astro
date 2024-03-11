@@ -1,0 +1,38 @@
+---
+import { type Speaker } from '@/schemas/speaker.schema'
+import SpeakersSlider from './speakers/SpeakersSlider.vue'
+
+interface Props {
+  speakersInfo: Speaker[]
+}
+
+const { speakersInfo } = Astro.props
+
+const minSpeakers = 6
+
+if (speakersInfo.length < minSpeakers) {
+  speakersInfo.push(
+    ...Array.from({ length: minSpeakers - speakersInfo.length }).map(
+      () => ({ isRevealed: false, revealDate: new Date() }) as const
+    )
+  )
+}
+---
+
+<div class="h-full flex flex-col justify-start">
+  <div text-center>
+    <h2 class="my-2 text-2xl font-bold" md="text-3xl">speakers</h2>
+    <p
+      class="mb-6 text-3xl line-height-none font-title"
+      sm="mb-8"
+      md="text-4xl"
+      lg="mb-10 text-5xl"
+    >
+      <span block> Conoce a los </span>
+      <span block> invitados </span>
+    </p>
+  </div>
+  <div class="grow">
+    <SpeakersSlider client:idle speakersInfo={speakersInfo} />
+  </div>
+</div>

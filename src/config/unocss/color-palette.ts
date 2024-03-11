@@ -159,4 +159,18 @@ export const colorPalette: Theme['colors'] = {
   malibu,
   redRibbon,
   starship,
+  consoleGreen: {
+    DEFAULT: '#00DD00',
+    50: '#96FF96',
+    100: '#81FF81',
+    200: '#58FF58',
+    300: '#30FF30',
+    400: '#07FF07',
+    500: '#00DD00',
+    600: '#00A500',
+    700: '#006D00',
+    800: '#003500',
+    900: '#000000',
+    950: '#000000',
+  },
 }

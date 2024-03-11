@@ -6,82 +6,88 @@ import { Image, getImage } from 'astro:assets'
 const loboImageOptimized = await getImage({ src: LoboImage })
 ---
 
-<BgGlitch
-  playbackRate={0.66}
-  class:list={[
-    // Default
-    'absolute top-0 h-50vh w-full max-w-full w-auto overflow-hidden z-0',
-    // sm
-    'sm:(h-100vh)',
-  ]}
-/>
-{/* TODO: portrait and landscape responsive design */}
+<div class="relative">
+  <BgGlitch
+    playbackRate={0.66}
+    class:list={[
+      // Default
+      'absolute inset-0 h-50vh w-full max-w-full w-auto overflow-hidden z-0',
+      // sm
+      'sm:(h-100vh)',
+    ]}
+  />
+  {/* TODO: portrait and landscape responsive design */}
 
-<!-- Landing cover -->
-<div
-  class:list={[
-    // Default
-    'relative w-full items-center h-50vh',
-    // md
-    'md:(flex h-screen justify-center -mt-20)',
-    // lg
-    'lg:(flex justify-right)',
-  ]}
->
+  <!-- Landing cover -->
   <div
     class:list={[
       // Default
-      'h-full w-full absolute',
-      'lg:(h-screen relative mt-10 flex-[0_1_40%] -left-5%)',
+      'relative w-full items-center h-50vh',
+      // md
+      'md:(flex h-screen justify-center -mt-20)',
+      // lg
+      'lg:(flex justify-right)',
     ]}
   >
-    <Image
-      src={LoboImage}
-      alt="Personaje Lobo Hackathon BUAP"
-      loading="eager"
-      class:list={[
-        'relative w-auto h-full mx-auto opacity-65 mix-blend-difference -scale-x-100',
-        'object-contain',
-        'lg:(object-cover overflow-visible)',
-      ]}
-    />
     <div
       class:list={[
-        'img-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100',
-        'xl:left-20%',
-        '2xl:left-0',
+        // Default
+        'h-full w-full absolute mx-auto flex justify-center overflow-visible',
+        'lg:(h-screen relative mt-10 flex-[0_1_40%] -left-5%)',
       ]}
     >
-      {
-        Array.from({ length: 3 }).map(() => (
-          <div
-            class="bg-contain object-contain lg:(bg-cover object-cover) img-glitch1-layer"
-            style={`background-image: url("${loboImageOptimized.src}");`}
-          />
-        ))
-      }
+      <div class="relative mx-auto h-full overflow-visible">
+        <Image
+          src={LoboImage}
+          alt="Personaje Lobo Hackathon BUAP"
+          loading="eager"
+          class:list={[
+            'relative w-auto h-full mx-auto opacity-65 mix-blend-difference -scale-x-100',
+            'object-contain',
+            'lg:(object-cover overflow-visible)',
+          ]}
+        />
+        <div
+          class:list={[
+            'img-glitch1-container h-inherit overflow-hidden -scale-x-100 mx-auto',
+            // 'xl:left-25%',
+            // '2xl:left-0',
+          ]}
+        >
+          {
+            Array.from({ length: 3 }).map(() => (
+              <div
+                class="bg-contain object-contain lg:(bg-cover object-cover) img-glitch1-layer"
+                style={`background-image: url("${loboImageOptimized.src}");`}
+              />
+            ))
+          }
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="relative h-full w-full flex flex-col justify-center lg:flex-[0_1_60%]">
-    <!-- Overlay -->
-    <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
-    <div class="z-1">
-      <h1
-        class:list={[
-          // Default
-          'text-center text-4xl text-white font-bold',
-          'sm:text-5xl',
-          'md:text-6xl',
-          'lg:text-7xl',
-          'xl:text-8xl',
-        ]}
-      >
-        Lobo Hackathon BUAP
-      </h1>
-      <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">
-        2024
-      </p>
+    <div class="relative h-full w-full flex flex-col justify-center lg:flex-[0_1_60%]">
+      <!-- Overlay -->
+      <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
+      <div class="z-1 flex flex-col items-center">
+        <h1
+          class:list={[
+            // Default
+            'text-center text-3.5rem text-white font-bold font-title flex flex-col items-start w-auto',
+            'sm:text-6xl',
+            'md:text-8xl',
+            'lg:text-9xl',
+            'xl:text-9xl',
+          ]}
+        >
+          <span class="block text-50% line-height-85%">Lobo</span>
+          <span class="block line-height-95%">Hackathon</span>
+          <span class="block self-end font-sans text-50% line-height-70%">BUAP</span>
+        </h1>
+        <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">
+          2024
+        </p>
+      </div>
     </div>
   </div>
 </div>

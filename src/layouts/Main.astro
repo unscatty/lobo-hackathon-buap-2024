@@ -17,12 +17,16 @@ const { title, description, ogImage, class: cssClass, 'class:list': cssClassList
     <slot name="head-meta" />
   </MetaHead>
 
-  <body class:list={['h-full', cssClass, cssClassList]}>
-    <header>
-      <Navbar />
-    </header>
-    <!-- Content -->
-    <slot />
-    <Footer />
+  <body class:list={['bg-base text-primary font-anta', cssClass, cssClassList]}>
+    <main
+      class="h-screen max-h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth"
+    >
+      <header>
+        <Navbar />
+      </header>
+      <!-- Content -->
+      <slot />
+      <Footer class="snap-start" />
+    </main>
   </body>
 </html>

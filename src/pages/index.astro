@@ -1,11 +1,34 @@
 ---
 import { mainPageFonts } from '@/config/fonts'
+import { type Speaker } from '@/schemas/speaker.schema'
 import LandingCover from '@components/landing/LandingCover.astro'
+import Speakers from '@components/landing/Speakers.astro'
 import MainLayout from '@layouts/Main.astro'
 import { AstroFont } from 'astro-font'
+import { getImage } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+// Get speakers data
+const speakersCollection = await getCollection('speakers')
+const speakersInfo = await Promise.all<Speaker>(
+  speakersCollection.map(async (speaker) => {
+    if (speaker.data.isRevealed) {
+      return {
+        ...speaker.data,
+        info: {
+          ...speaker.data.info,
+          // Get optimized image
+          imageUrl: (await getImage({ src: speaker.data.info.image })).src,
+        },
+      }
+    }
+
+    return speaker.data
+  })
+)
 ---
 
-<MainLayout title="" description="Main page" class="bg-base">
+<MainLayout title="" description="Main page">
   <!-- head/meta elements -->
   <Fragment slot="head-meta">
     <!-- Fonts -->
@@ -13,6 +36,14 @@ import { AstroFont } from 'astro-font'
   </Fragment>
 
   <!-- Main content -->
-  <LandingCover />
+  <section class="snap-start">
+    <LandingCover />
+  </section>
   <!-- More sections -->
+  <div class="px-0" sm="px-6%" md="px-10%" lg="px-15%">
+    <section id="invitados" class="mt-10 h-screen w-full snap-start pb-20" sm="pb-10">
+      <!-- Speakers -->
+      <Speakers speakersInfo={speakersInfo} />
+    </section>
+  </div>
 </MainLayout>

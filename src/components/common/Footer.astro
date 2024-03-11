@@ -1,5 +1,9 @@
 ---
+import type { ClassyComponentProps } from '@/types/astro.types'
 
+interface Props extends ClassyComponentProps {}
+
+const { class: cssClass, 'class:list': cssClassList } = Astro.props
 ---
 
-<Fragment> Footer </Fragment>
+<div class:list={[cssClass, cssClassList]}>Footer</div>
