@@ -3,6 +3,8 @@ import LoboImage from '@assets/lobo_personaje.png'
 import BgGlitch from '@components/landing/BgGlitch.astro'
 import { Image, getImage } from 'astro:assets'
 
+const isVideoPlaying = false
+
 const loboImageOptimized = await getImage({ src: LoboImage })
 ---
 
@@ -46,10 +48,12 @@ const loboImageOptimized = await getImage({ src: LoboImage })
       ]}
     />
     <div
-      class:list={[
+      class:list={isVideoPlaying ? [
         'img-glitch1-container h-inherit w-inherit overflow-hidden -scale-x-100',
         'xl:left-20%',
         '2xl:left-0',
+      ] : [
+        'hidden',
       ]}
     >
       {

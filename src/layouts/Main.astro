@@ -5,6 +5,7 @@ import type { ClassyComponentProps } from '@/types/astro.types'
 import { type MetaHeadProps } from '@/types/layouts.types'
 import MetaHead from '@components/common/MetaHead.astro'
 
+
 interface Props extends MetaHeadProps, ClassyComponentProps {}
 
 const { title, description, ogImage, class: cssClass, 'class:list': cssClassList } = Astro.props

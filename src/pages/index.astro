@@ -3,6 +3,7 @@ import { mainPageFonts } from '@/config/fonts'
 import LandingCover from '@components/landing/LandingCover.astro'
 import MainLayout from '@layouts/Main.astro'
 import { AstroFont } from 'astro-font'
+import Schedule from '@/components/landing/Schedule/Schedule.jsx'
 ---
 
 <MainLayout title="" description="Main page" class="bg-base">
@@ -14,5 +15,7 @@ import { AstroFont } from 'astro-font'
 
   <!-- Main content -->
   <LandingCover />
+  <Schedule client:visible />
   <!-- More sections -->
 </MainLayout>
+@/components/landing/Schedule/Schedule

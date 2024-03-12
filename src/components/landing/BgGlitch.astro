@@ -4,6 +4,8 @@ interface Props extends ClassyComponentProps {
   playbackRate?: number
 }
 
+const isVidioPlaying= false
+
 const { playbackRate = 1, class: cssClass = 'absolute', 'class:list': cssClassList } = Astro.props
 
 const videoElementId = 'bg-glitch-video'
@@ -11,7 +13,7 @@ const videoElementId = 'bg-glitch-video'
 
 <div class:list={[cssClass, cssClassList]}>
   <video id={videoElementId} autoplay loop muted class="absolute h-full min-w-full object-cover">
-    <source src="/glitch-background.mp4" type="video/mp4" />
+    {isVidioPlaying && <source src="/glitch-background.mp4" type="video/mp4" />}
     Your browser does not support the video tag.
   </video>
   <!-- Video overlay -->
