@@ -19,13 +19,22 @@
     "@astrojs/react": "^3.0.10",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/vue": "^4.0.8",
+    "@headlessui/vue": "^1.7.19",
+    "@vee-validate/zod": "^4.12.6",
     "@vueuse/core": "^10.9.0",
     "astro": "^4.4.15",
     "astro-font": "^0.0.77",
     "astro-font-picker": "^0.2.1",
     "astro-icon": "^1.1.0",
+    "i18next": "^23.10.1",
     "keen-slider": "^6.8.6",
-    "typescript": "^5.4.2"
+    "mande": "^2.0.8",
+    "notiwind": "^2.0.2",
+    "typescript": "^5.4.2",
+    "uvcanvas": "^0.2.1",
+    "vee-validate": "^4.12.6",
+    "zod": "^3.22.4",
+    "zod-i18n-map": "^2.27.0"
   },
   "devDependencies": {
     "@antfu/ni": "^0.21.12",

@@ -1,0 +1,46 @@
+---
+import { commonFonts } from '@/config/fonts'
+import MainLayout from '@layouts/Main.astro'
+import { AstroFont } from 'astro-font'
+import { Opulento } from 'uvcanvas'
+import PreRegisterForm from '@components/pre-register/PreRegisterForm.vue'
+---
+
+<MainLayout
+  title="Pre-registro"
+  description="Completa tu pre-registro para estar al tanto de todas las novedades del Lobo Hackathon."
+  class="max-h-screen w-full overflow-y-scroll"
+  footer-class="relative z-1"
+>
+  <Fragment slot="head-meta">
+    <!-- Fonts -->
+    <AstroFont config={commonFonts} />
+  </Fragment>
+
+  <div class="flex justify-center">
+    <div
+      class="pointer-events-none absolute top-0 z-0 h-screen min-h-screen w-full overflow-hidden"
+    >
+      <Opulento client:idle />
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-base bg-opacity-90"></div>
+    </div>
+    <div
+      class="relative z-1 w-full flex flex-col items-center justify-center px-4 py-4"
+      sm="w-90% py-6"
+      md="w-70%"
+      lg="w-60%"
+      xl="w-40%"
+    >
+      <div class="text-center text-sm text-gray-400">
+        <p class="mb-4 text-2xl text-primary font-title" sm="text-3xl" md="text-4xl">
+          Pre-registro
+        </p>
+        <p class="my-4 text-4 leading-6" md="text-lg">
+          Mantente al tanto de las últimas noticias y actualizaciones del Lobo Hackathon
+        </p>
+      </div>
+      <PreRegisterForm client:load />
+    </div>
+  </div>
+</MainLayout>

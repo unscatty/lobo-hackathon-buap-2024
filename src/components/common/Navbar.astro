@@ -2,19 +2,19 @@
 export const navbarItems = [
   {
     title: 'Invitados',
-    href: '#invitados',
+    href: '/#invitados',
   },
   {
     title: 'Nuestros aliados',
-    href: '#aliados',
+    href: '/#aliados',
   },
   {
     title: 'Agenda',
-    href: '#agenda',
+    href: '/#agenda',
   },
   {
     title: 'Patrocinadores',
-    href: '#patrocinadores',
+    href: '/#patrocinadores',
   },
 ]
 ---
@@ -52,7 +52,7 @@ export const navbarItems = [
             <!-- Register button -->
             <li>
               <a
-                href="/registro"
+                href="/pre-registro"
                 class:list={[
                   'relative',
                   'inline-block',
@@ -68,12 +68,12 @@ export const navbarItems = [
                   'border-solid',
                   'border-primary',
                   'text-primary',
-                  'hover:(btn-glitch1 text-black)',
-                  'focus:(btn-glitch1 text-black)',
+                  'hover:(btn-glitch1 text-black before:-scale-y-100)',
+                  'focus:(btn-glitch1 text-black before:-scale-y-100)',
                 ]}
-                data-glitch-text="Registro"
+                data-glitch-text="Pre-registro"
               >
-                Registro
+                Pre-registro
               </a>
               <!-- <a
                 href="/registro"

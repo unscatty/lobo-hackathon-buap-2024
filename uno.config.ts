@@ -33,7 +33,7 @@ export default defineConfig<Theme>({
     fontFamily: {
       ...customFonts,
       title: [fontLaOriental.name, fontLaOriental.fallback].join(','),
-      sub: [fontAnta.name, fontAnta.fallback].join(','),
+      main: [fontAnta.name, fontAnta.fallback].join(','),
     },
     animation: {
       durations: {

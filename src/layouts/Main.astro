@@ -4,10 +4,30 @@ import Navbar from '@/components/common/Navbar.astro'
 import type { ClassyComponentProps } from '@/types/astro.types'
 import { type MetaHeadProps } from '@/types/layouts.types'
 import MetaHead from '@components/common/MetaHead.astro'
+import type { AstroBuiltinAttributes } from 'astro'
 
-interface Props extends MetaHeadProps, ClassyComponentProps {}
+interface Props extends MetaHeadProps, ClassyComponentProps {
+  'body-class'?: string
+  'body-class:list'?: AstroBuiltinAttributes['class:list']
+  'nav-class'?: string
+  'nav-class:list'?: AstroBuiltinAttributes['class:list']
+  'footer-class'?: string
+  'footer-class:list'?: AstroBuiltinAttributes['class:list']
+}
 
-const { title, description, ogImage, class: cssClass, 'class:list': cssClassList } = Astro.props
+const {
+  title,
+  description,
+  ogImage,
+  class: mainClass,
+  'class:list': mainClassList,
+  'body-class': bodyClass,
+  'body-class:list': bodyClassList,
+  'nav-class': navClass,
+  'nav-class:list': navClassList,
+  'footer-class': footerClass,
+  'footer-class:list': footerClassList,
+} = Astro.props
 ---
 
 <!doctype html>
@@ -17,16 +37,14 @@ const { title, description, ogImage, class: cssClass, 'class:list': cssClassList
     <slot name="head-meta" />
   </MetaHead>
 
-  <body class:list={['bg-base text-primary font-anta', cssClass, cssClassList]}>
-    <main
-      class="h-screen max-h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth"
-    >
+  <body class:list={['bg-base text-primary font-main', bodyClass, bodyClassList]}>
+    <main class:list={[mainClass, mainClassList]}>
       <header>
-        <Navbar />
+        <Navbar class:list={[navClass, navClassList]} />
       </header>
       <!-- Content -->
       <slot />
-      <Footer class="snap-start" />
+      <Footer class:list={[footerClass, footerClassList]} />
     </main>
   </body>
 </html>

@@ -28,7 +28,12 @@ const speakersInfo = await Promise.all<Speaker>(
 )
 ---
 
-<MainLayout title="" description="Main page">
+<MainLayout
+  title=""
+  description="Main page"
+  class="h-screen max-h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth"
+  footer-class="snap-start"
+>
   <!-- head/meta elements -->
   <Fragment slot="head-meta">
     <!-- Fonts -->
