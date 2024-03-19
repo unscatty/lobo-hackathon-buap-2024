@@ -158,15 +158,26 @@
   padding: 0;
 }
 
+
 .vertical-timeline-element-content {
   position: relative;
   margin-left: 25px !important;
-  background: #fff;
+  background: #e4e4e4;
   border-radius: 0.25em;
   padding: 10px !important;
   -webkit-box-shadow: 0 3px 0 #ddd;
   box-shadow: 0 3px 0 #ddd;
 }
+
+.happening-now .vertical-timeline-element-content {
+  background: #5e2176;
+  border-radius: 0.25em;
+  padding: 10px !important;
+  -webkit-box-shadow: 0 3px 0 #ddd;
+  box-shadow: 0 3px 0 #ddd;
+}
+
+
 
 .vertical-timeline-element-date {
   position: absolute;
