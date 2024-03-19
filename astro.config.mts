@@ -23,7 +23,7 @@ export default defineConfig({
       injectReset: true,
     }),
     // Font Picker for Astro's dev toolbar
-    AstroFontPicker(),
+    //AstroFontPicker(),
     Sitemap(),
     // https://github.com/natemoo-re/astro-icon
     Icon(),

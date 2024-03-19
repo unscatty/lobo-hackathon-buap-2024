@@ -3,6 +3,7 @@ import { mainPageFonts } from '@/config/fonts'
 import LandingCover from '@components/landing/LandingCover.astro'
 import MainLayout from '@layouts/Main.astro'
 import { AstroFont } from 'astro-font'
+import Info from '@/components/landing/Info/Info.jsx'
 ---
 
 <MainLayout title="" description="Main page" class="bg-base">
@@ -14,5 +15,14 @@ import { AstroFont } from 'astro-font'
 
   <!-- Main content -->
   <LandingCover />
+  <!-- <h1 class:list={[
+    // Default
+    'text-center text-4xl text-white font-bold',
+    'sm:text-5xl',
+    'md:text-6xl',
+    'lg:text-7xl',
+    'xl:text-8xl',
+  ]}> pruba de mierda</h1> -->
+  <Info />
   <!-- More sections -->
 </MainLayout>
