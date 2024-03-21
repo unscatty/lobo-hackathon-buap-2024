@@ -1,0 +1,41 @@
+---
+import type { ClassyComponentProps } from '@/types/astro.types'
+import type { ImageMetadata } from 'astro'
+import { Image } from 'astro:assets'
+
+interface Props extends ClassyComponentProps {
+  collection: {
+    name: string
+    image: ImageMetadata
+    url: string
+  }[]
+}
+
+const { collection, class: cssClass, 'class:list': cssClassList, ...rest } = Astro.props
+---
+
+<div
+  class:list={[
+    'flex flex-wrap items-center justify-center gap-x-5 gap-y-3',
+    cssClass,
+    cssClassList,
+  ]}
+  {...rest}
+>
+  {
+    collection.map((item) => (
+      <slot name="item">
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="h-full w-75% flex items-center justify-center"
+          md="w-48%"
+          lg="w-30%"
+        >
+          <Image src={item.image} alt={item.name} class="object-contain" loading="lazy" />
+        </a>
+      </slot>
+    ))
+  }
+</div>

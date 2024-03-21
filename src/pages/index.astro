@@ -9,6 +9,7 @@ import MainLayout from '@layouts/Main.astro'
 import { AstroFont } from 'astro-font'
 import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
+import Sponsors from '@components/landing/sponsors/Sponsors.astro'
 
 // Get speakers data
 const speakersCollection = await getCollection('speakers')
@@ -58,6 +59,10 @@ const speakersInfo = await Promise.all<Speaker>(
     </section>
     <!-- Aliados section -->
     <!-- ... -->
+    <section id="patrocinadores" class="h-full w-full snap-start">
+      <!-- Sponsors section -->
+      <Sponsors />
+    </section>
     <section id="agenda" class="h-full min-h-screen w-full snap-start overflow-y-scroll pb-20">
       <!-- Schedule section -->
       <Schedule client:idle />
