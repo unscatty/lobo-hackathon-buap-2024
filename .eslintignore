@@ -4,3 +4,5 @@ bun.lockb
 # Evertyhing outside src folder
 /*
 !/src/
+**/*.css
+package.json
