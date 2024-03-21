@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content'
+import ImagesFlexLayout from '@components/common/ImagesFlexLayout.astro'
+
+const communitiesCollection = await getCollection('communities')
+const communities = communitiesCollection.map((community) => {
+  return community.data
+})
+---
+
+<div class="h-full flex flex-col justify-start py-10">
+  <div text-center>
+    <h2 class="text-3xl font-bold font-title" md="my-2 text-4xl" lg="text-5xl">
+      Comunidades aliadas
+    </h2>
+    <p class="my-4 px-5% text-4" sm="text-lg" md="text-xl" lg="text-2xl">
+      Conoce a nuestros aliados y colaboradores
+    </p>
+  </div>
+
+  <ImagesFlexLayout class="md:justify-around" collection={communities} />
+</div>

@@ -11,7 +11,13 @@ const sponsorsCollection = defineCollection({
   schema: sponsorCollectionSchema,
 })
 
+const communitiesCollection = defineCollection({
+  type: 'data',
+  schema: sponsorCollectionSchema,
+})
+
 export const collections = {
   speakers: speakersCollection,
   sponsors: sponsorsCollection,
+  communities: communitiesCollection,
 }
