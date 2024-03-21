@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import hackerImage from '@/assets/hacker.png'
+import hackerImage from '@assets/images/hacker.png'
 import { type Speaker } from '@/schemas/speaker.schema'
 import SpeakerInfoCard from './SpeakerInfoCard.vue'
 import SpeakerUnknown from './SpeakerUnknown.vue'
