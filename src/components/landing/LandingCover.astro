@@ -1,5 +1,5 @@
 ---
-import LoboImage from '@assets/images/lobo_personaje.png'
+import LoboImage from '@assets/images/lobo_personaje_der.png'
 import BgGlitch from '@components/landing/BgGlitch.astro'
 import { Image, getImage } from 'astro:assets'
 
@@ -42,16 +42,14 @@ const loboImageOptimized = await getImage({ src: LoboImage })
           alt="Personaje Lobo Hackathon BUAP"
           loading="eager"
           class:list={[
-            'relative w-auto h-full mx-auto opacity-65 mix-blend-difference -scale-x-100',
+            'relative w-auto h-full mx-auto opacity-65 mix-blend-difference',
             'object-contain',
             'lg:(object-cover overflow-visible)',
           ]}
         />
         <div
           class:list={[
-            'img-glitch1-container h-inherit overflow-hidden -scale-x-100 mx-auto',
-            // 'xl:left-25%',
-            // '2xl:left-0',
+            'img-glitch1-container h-inherit overflow-hidden mx-auto',
           ]}
         >
           {
