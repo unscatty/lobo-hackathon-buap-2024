@@ -18,6 +18,8 @@ import {
 import { type Theme } from './src/config/unocss/types'
 import { variantInherit, variantScoped, variantWeakInherit } from './src/config/unocss/variants'
 import { allIcons } from './src/config/unocss/icons'
+import { presetHeroPatterns } from '@julr/unocss-preset-heropatterns'
+
 
 // Convert the fonts array to an object
 const customFonts: Record<string, string> = {}
@@ -66,6 +68,7 @@ export default defineConfig<Theme>({
     presetAttributify(),
     presetIcons(),
     presetTypography(),
+    presetHeroPatterns(),
     // Glitch effects
     glitch1Preset,
     imgGlitch1Preset,
