@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content'
+import ImagesFlexLayout from '@components/common/ImagesFlexLayout.astro'
+
+const sponsorsCollection = await getCollection('sponsors')
+const sponsors = sponsorsCollection.map((sponsor) => {
+  return sponsor.data
+})
+---
+
+<div class="h-full flex flex-col justify-start py-10">
+  <div text-center>
+    <h2 class="text-3xl font-bold font-title" md="my-2 text-4xl" lg="text-5xl">Patrocinadores</h2>
+    <p class="my-4 px-5% text-4" sm="text-lg" md="text-xl" lg="text-2xl">
+      La realización del primer Lobo Hackathon no sería posible sin el apoyo de nuestros
+      patrocinadores.
+    </p>
+  </div>
+
+  <ImagesFlexLayout class="md:justify-around" collection={sponsors} />
+</div>
