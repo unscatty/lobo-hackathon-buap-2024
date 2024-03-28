@@ -8,33 +8,32 @@ const loboImageOptimized = await getImage({ src: LoboImage })
 
 <div class="relative">
   <BgGlitch
-    playbackRate={0.66}
+    playbackRate={0.45}
     class:list={[
       // Default
-      'absolute inset-0 h-50vh w-full max-w-full w-auto overflow-hidden z-0',
-      // sm
-      'sm:(h-100vh)',
+      'absolute',
+      'inset-0',
+      'h-50vh',
+      'w-full',
+      'max-w-full',
+      'w-auto',
+      'overflow-hidden',
+      'z-0',
+      // md
+      'md:(h-100vh)',
     ]}
   />
   {/* TODO: portrait and landscape responsive design */}
 
   <!-- Landing cover -->
   <div
-    class:list={[
-      // Default
-      'relative w-full items-center h-50vh',
-      // md
-      'md:(flex h-screen justify-center -mt-20)',
-      // lg
-      'lg:(flex justify-right)',
-    ]}
+    class="relative h-50vh w-full items-center overflow-x-hidden"
+    md="flex h-screen justify-center -mt-20"
+    lg="flex justify-right"
   >
     <div
-      class:list={[
-        // Default
-        'h-full w-full absolute mx-auto flex justify-center overflow-visible',
-        'lg:(h-screen relative mt-10 flex-[0_1_40%] -left-5%)',
-      ]}
+      class="absolute mx-auto h-full w-full flex justify-center overflow-visible"
+      lg="h-screen relative flex-[0_1_40%] -left-5%"
     >
       <div class="relative mx-auto h-full overflow-visible">
         <Image
@@ -47,11 +46,7 @@ const loboImageOptimized = await getImage({ src: LoboImage })
             'lg:(object-cover overflow-visible)',
           ]}
         />
-        <div
-          class:list={[
-            'img-glitch1-container h-inherit overflow-hidden mx-auto',
-          ]}
-        >
+        <div class:list={['img-glitch1-container h-inherit overflow-hidden mx-auto']}>
           {
             Array.from({ length: 3 }).map(() => (
               <div
@@ -64,31 +59,68 @@ const loboImageOptimized = await getImage({ src: LoboImage })
       </div>
     </div>
 
-    <div class="relative h-full w-full flex flex-col justify-center lg:flex-[0_1_60%]">
+    <div class="relative h-full w-full flex flex-col justify-around" lg="flex-[0_1_60%] pr-4">
       <!-- Overlay -->
-      <div class="absolute inset-0 z-0 bg-black opacity-50 lg:hidden"></div>
+      <div class="absolute inset-0 z-0 bg-black opacity-50" lg="hidden"></div>
+      <div class="h-auto">
+        {/* Do not remove this div */}
+      </div>
       <div class="z-1 flex flex-col items-center">
         <h1
-          class:list={[
-            // Default
-            'text-center text-3.5rem text-white font-bold font-title flex flex-col items-start w-auto',
-            'sm:text-6xl',
-            'md:text-8xl',
-            'lg:text-9xl',
-            'xl:text-9xl',
-          ]}
+          class="w-auto flex flex-col items-start text-center text-3.5rem text-white font-bold font-title"
+          sm="text-7xl"
+          md="text-8xl"
+          xl="text-9xl"
         >
-          <span class="block text-50% line-height-85%">Lobo</span>
-          <span class="group/glitch1 block line-height-95%">
-            <span class="glitch1-glitch-hover" data-glitch-text="Hackathon">
+          <span class="mb-1 block text-50% line-height-95%">Lobo</span>
+          <span class="group/glitch1 block line-height-80%">
+            <span
+              class="group-hover/glitch1:after:text-secondary group-hover/glitch1:before:text-accent glitch1-glitch-hover"
+              data-glitch-text="Hackathon"
+            >
               <span class="glitch1-glitch-text-hover"> Hackathon </span>
             </span>
           </span>
-          <span class="block self-end text-50% line-height-70% font-sans">BUAP</span>
+          <span class="block self-end text-50% line-height-70% font-archivo-black -mt-1" md="-mt-2">
+            BUAP 2024
+          </span>
         </h1>
-        <p class="text-center text-lg text-white lg:text-3xl md:text-2xl sm:text-xl xl:text-4xl">
-          2024
+      </div>
+      <div
+        class="z-1 flex flex-wrap items-center justify-center gap-x-8 px-4 text-center text-xl"
+        sm="text-2xl gap-y-2"
+        xl="text-3xl"
+      >
+        <p>
+          <span class="text-150% font-black">
+            18
+            <span> - </span>
+            20
+          </span>
+          de Abril
         </p>
+        <a href="https://maps.app.goo.gl/FyaovW1E2CpQFcPT7" class="block flex items-center gap-x-1">
+          <svg
+            class="hw-8 md:hw-10"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.1209 10.3099C15.1209 12.0299 13.7309 13.4299 12.0009 13.4299C10.2709 13.4299 8.88086 12.0399 8.88086 10.3099C8.88086 8.57994 10.2809 7.18994 12.0009 7.18994C12.3409 7.18994 12.6709 7.23994 12.9709 7.33994"
+              stroke="currentColor"
+              stroke-width="0.125rem"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M5.98094 4.30006C10.3509 0.190061 18.8209 1.60006 20.3809 8.51006C21.5309 13.5901 18.3709 17.8901 15.6009 20.5501C13.5909 22.4901 10.4109 22.4901 8.39094 20.5501C5.63094 17.8801 2.46094 13.5801 3.62094 8.50006"
+              stroke="currentColor"
+              stroke-width="0.125rem"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span> Centro de convenciones BUAP </span>
+        </a>
       </div>
     </div>
   </div>

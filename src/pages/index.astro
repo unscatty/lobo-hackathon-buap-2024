@@ -33,7 +33,7 @@ const speakersInfo = await Promise.all<Speaker>(
 <MainLayout
   title=""
   description="Main page"
-  class="h-screen max-h-screen w-full snap-y snap-mandatory overflow-y-scroll scroll-smooth"
+  class="h-screen max-h-screen w-full snap-y snap-mandatory overflow-y-auto scroll-smooth"
   footer-class="snap-start"
 >
   <!-- head/meta elements -->
@@ -58,7 +58,7 @@ const speakersInfo = await Promise.all<Speaker>(
     </section>
     <!-- Aliados section -->
     <!-- ... -->
-    <section id="agenda" class="h-full min-h-screen w-full snap-start overflow-y-scroll pb-20">
+    <section id="agenda" class="h-full min-h-screen w-full snap-start overflow-y-auto pb-20">
       <!-- Schedule section -->
       <Schedule client:idle />
     </section>

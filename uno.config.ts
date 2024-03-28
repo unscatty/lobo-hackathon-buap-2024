@@ -56,7 +56,9 @@ export default defineConfig<Theme>({
       },
     },
   },
-  shortcuts: [],
+  shortcuts: [
+    [/^hw-(.+)$/, ([_, c]) => `h-${c} w-${c}`],
+  ],
   presets: [
     presetUno(),
     presetAttributify(),
