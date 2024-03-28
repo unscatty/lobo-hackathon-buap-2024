@@ -58,6 +58,8 @@ export default defineConfig<Theme>({
   },
   shortcuts: [
     [/^hw-(.+)$/, ([_, c]) => `h-${c} w-${c}`],
+    ['no-outline', '[outline:none]'],
+    ['no-bg', '[background:none]'],
   ],
   presets: [
     presetUno(),

@@ -1,4 +1,8 @@
 ---
+import NavMobileMenu from './NavMobileMenu.vue'
+
+const { pathname } = Astro.url
+
 export const navbarItems = [
   {
     title: 'Invitados',
@@ -20,36 +24,33 @@ export const navbarItems = [
 ---
 
 <Fragment>
-  <nav class="relative z-2 hidden bg-none p-4" sm="block">
-    <div class="mx-auto px-2">
-      <div class="h-10 w-full flex flex-1 items-center justify-between">
-        <div class="flex flex-shrink-0 items-center">
-          <a href="/" class="group/glitch1 text-2xl text-primary font-black tracking-wider">
-            <span class="glitch1-glitch-hover" data-glitch-text="BUAP">
-              <span class="glitch1-glitch-text-hover"> BUAP </span>
-            </span>
-          </a>
-        </div>
-        <div class="ml-6 justify-self-end">
-          <!-- Navigation items -->
-          <ul class="flex items-center space-x-4">
-            {
-              navbarItems.map((item) => (
-                <li class="group">
-                  <a
-                    href={item.href}
-                    class="rounded-md px-3 py-2 text-sm text-primary-600 font-medium"
-                    hover="bg-base-700/65 text-primary rounded-none"
-                  >
-                    <span uppercase>
-                      {item.title}
-                      <span class="invisible group-hover:animate-blink">_</span>
-                    </span>
-                  </a>
-                </li>
-              ))
-            }
-            <!-- Register button -->
+  <nav class="relative z-2 bg-none p-4">
+    <!-- Desktop navbar -->
+    <div class="hidden h-10 w-full px-2" lg="flex flex-1 items-center justify-between">
+      <a href="/" class="mr-auto">
+        <div i-solar:home-2-broken hw-6></div>
+      </a>
+      <!-- Navigation items -->
+      <ul class="flex items-center space-x-4">
+        {
+          navbarItems.map((item) => (
+            <li class="group">
+              <a
+                href={item.href}
+                class="rounded-md px-3 py-2 text-sm text-primary-600 font-medium"
+                hover="bg-base-700/65 text-primary rounded-none"
+              >
+                <span uppercase>
+                  {item.title}
+                  <span class="invisible group-hover:animate-blink">_</span>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+        <!-- Register button -->
+        {
+          pathname !== '/pre-registro' && (
             <li>
               <a
                 href="/pre-registro"
@@ -68,14 +69,17 @@ export const navbarItems = [
                   'border-solid',
                   'border-primary',
                   'text-primary',
-                  'hover:(btn-glitch1 text-black before:-scale-y-100)',
-                  'focus:(btn-glitch1 text-black before:-scale-y-100)',
                 ]}
+                hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
+                focus="btn-glitch1 text-base before:-scale-y-100"
                 data-glitch-text="Pre-registro"
               >
                 Pre-registro
               </a>
-              <!-- <a
+            </li>
+          )
+        }
+        <!-- <a
                 href="/registro"
                 class:list={[
                   'relative',
@@ -100,10 +104,60 @@ export const navbarItems = [
               >
                 Registro
               </a> -->
-            </li>
-          </ul>
-        </div>
-      </div>
+      </ul>
+      <!-- </div> -->
+    </div>
+    <!-- Mobile navbar -->
+    <div class="h-10 w-full flex items-center justify-between" lg="hidden">
+      <a href="/">
+        <div i-solar:home-2-broken hw-6></div>
+      </a>
+      <NavMobileMenu client:visible>
+        <ul class="w-full flex flex-col items-center divide-y-2 divide-primary">
+          {
+            navbarItems.map((item) => (
+              <li class="group w-full py-2" hover="bg-base-700/65 text-primary rounded-none">
+                <a
+                  href={item.href}
+                  class="w-full flex justify-center rounded-md py-2 text-sm text-primary-600 font-medium"
+                >
+                  <span uppercase>
+                    {item.title}
+                    <span class="invisible group-hover:animate-blink">_</span>
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+          <!-- Register button -->
+          {
+            pathname !== '/pre-registro' && (
+              <li w-full>
+                <a
+                  href="/pre-registro"
+                  class:list={[
+                    'relative',
+                    'text-center',
+                    'tracking-3',
+                    'text-4',
+                    'font-bold',
+                    'uppercase',
+                    'py-6',
+                    'text-primary',
+                    'flex',
+                    'justify-center',
+                  ]}
+                  hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
+                  focus="btn-glitch1 text-base before:-scale-y-100"
+                  data-glitch-text="Pre-registro"
+                >
+                  Pre-registro
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </NavMobileMenu>
     </div>
   </nav>
 </Fragment>
