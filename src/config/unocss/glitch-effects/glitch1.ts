@@ -42,8 +42,8 @@ export const glitch1Preset: Preset<Theme> = {
       [
         'before:text-[#FF0000]',
         'after:text-[#00FF00]',
-        `before:(-left-5% [clip:rect(0,1350px,140px,0)] animate-${name}--glitch-layer-before ${pseudoCommonClasses.join(' ')})`,
-        `after:(left-5% [clip:rect(0,1350px,50px,0)] animate-${name}--glitch-layer-after ${pseudoCommonClasses.join(' ')})`,
+        `before:(-left-5%  animate-${name}--glitch-layer-before ${pseudoCommonClasses.join(' ')})`,
+        `after:(left-5%  animate-${name}--glitch-layer-after ${pseudoCommonClasses.join(' ')})`,
       ].join(' '),
     ],
     // Applies the glitch effect on hover (must add `group/${name}` to a parent element`)
@@ -51,7 +51,7 @@ export const glitch1Preset: Preset<Theme> = {
     // Class to apply to the text element
     [
       glitchTextName,
-      ['relative', 'z-1', '[clip:rect(0,900px,722px,56px)]', `animate-${name}--glitch-layer-main`],
+      ['relative', 'z-1', `animate-${name}--glitch-layer-main`],
     ],
     // Applies the glitch effect on hover (must add `group-hover/${name}` to a parent element`)
     [`${glitchTextName}-hover`, [`group-hover/${name}:${glitchTextName}`]],
