@@ -81,6 +81,15 @@ export const mainPageFonts: FontConfig[] = [
     display: 'swap',
     fallback: 'sans-serif',
   },
+  {
+    src: [],
+    name: 'Archivo Black',
+    // Google Fonts URL
+    googleFontsURL: 'https://fonts.googleapis.com/css2?family=Archivo+Black',
+    preload: true,
+    display: 'swap',
+    fallback: 'sans-serif',
+  },
   ...commonFonts,
 ]
 

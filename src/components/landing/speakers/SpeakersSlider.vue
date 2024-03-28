@@ -32,12 +32,12 @@ const slidesConfig = computed(() => {
     case 'sm':
     case 'md':
       return {
-        perView: 3,
-        spacing: 6,
+        perView: 2,
+        spacing: 4,
       }
     case 'lg':
       return {
-        perView: 4,
+        perView: 3,
         spacing: 8,
       }
     case 'xl':
@@ -66,12 +66,12 @@ const selectedSlideSize = computed(() => {
   switch (activeBreakpoint.value) {
     case 'sm':
     case 'md':
-      return 66
+      return 100
     case 'lg':
-      return 50
+      return 75
     case 'xl':
     case '2xl':
-      return 40
+      return 50
     default:
       // Smaller than 'sm'
       return 100
