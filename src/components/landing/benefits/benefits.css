@@ -22,7 +22,7 @@
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .section__rewards-container--grid {
@@ -50,23 +50,23 @@
   line-height: 1.8;
 }
 
-.section__rewards-reward-box:nth-child(1) {
+/* .section__rewards-reward-box:nth-child(1) {
   grid-column: span 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-}
+} */
 
-.section__rewards-reward-box:nth-child(1) .section__rewards-reward-box-title {
+/* .section__rewards-reward-box:nth-child(1) .section__rewards-reward-box-title {
   font-size: 25px;
   color: var(--secundary-font-color);
   font-weight: 600;
   line-height: 1.8;
-}
+} */
 
-.section__rewards-reward-box:nth-child(1) .section__rewards-reward-image {
+/* .section__rewards-reward-box:nth-child(1) .section__rewards-reward-image {
   width: 100%;
-}
+} */
 
 .section__rewards-reward-image {
   width: 50%;

@@ -14,8 +14,8 @@ const translations = {
   'hackathonBenefits.learning.title': 'Aprendizaje',
   'hackathonBenefits.learning.content':
     'No importa tu nivel de conocimiento. Nuestros mentores estarán disponibles.',
-  'whatIs.title': '¿Qué es el',
-  'whatIs.hackathonName': 'Lobo Hackathon BUAP?',
+  'whatIs.title': '¿Qué es un',
+  'whatIs.hackathonName': 'Hackathon?',
   'whatIs.description': `Un hackathon es una manera increíble de aprender nuevas habilidades, crear
     proyectos increíbles y compartir ideas. 
     Se describe mejor como un 
@@ -27,7 +27,7 @@ const translations = {
   'hero.subheading': 'BUAP',
   'hero.description':
     '¡Deja tu marca en la historia al participar en el primer Hackathon de la BUAP! Como estudiante, tienes la oportunidad única de formar parte de este emocionante evento, que marcará un hito en nuestra universidad. Únete a nosotros y sé parte de este viaje hacia la innovación y el éxito.',
-  'whatIs.expectTitle': 'Qué esperar?',
+  'whatIs.expectTitle': 'Qué esperar...',
 }
 
 const t = (key) => translations[key] || key
@@ -116,12 +116,13 @@ const WhatIs = () => {
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           Un hackathon es una manera increíble de aprender nuevas habilidades, crear proyectos
-          increíbles y compartir ideas. 
-          <br/><br/>  Se describe mejor como un "maratón de inventos". Cualquier
-          persona interesada en la tecnología asiste a un hackathon para aprender, desarrollar y
-          compartir sus creaciones durante 3 días en un ambiente relajado y acogedor.
-          <br/> <br/>  ¡No es
-          necesario ser programador ni especializarse en Ciencias de la Computación!,
+          increíbles y compartir ideas.
+          <br />
+          <br /> Se describe mejor como un "maratón de inventos". Cualquier persona interesada en la
+          tecnología asiste a un hackathon para aprender, desarrollar y compartir sus creaciones
+          durante 3 días en un ambiente relajado y acogedor.
+          <br /> <br /> ¡No es necesario ser programador ni especializarse en Ciencias de la
+          Computación!,
         </p>
       </div>
 
@@ -131,7 +132,16 @@ const WhatIs = () => {
         >
           {t('whatIs.expectTitle')}
         </h5>
-        {hackathonBenefits.map((benefit, index) => (
+        <iframe
+          className="w-full h-[400px] sm:h-[500px] my-4 shadow-lg border-2 border-gray-200 rounded-[20px]"
+          src="https://www.youtube.com/embed/qj4DQfYx2Hg?si=lm8XU-Brp1QHHs0r"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+        {/* {hackathonBenefits.map((benefit, index) => (
           <BenefitCard
             key={benefit.id}
             icon={benefit.icon}
@@ -139,7 +149,7 @@ const WhatIs = () => {
             contentKey={benefit.contentKey}
             index={index}
           />
-        ))}
+        ))} */}
       </div>
     </section>
   )
