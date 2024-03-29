@@ -65,17 +65,17 @@ const speakersInfo = await Promise.all<Speaker>(
       <!-- Info -->
       <Benefits />
     </section>
-    <section id="aliados" class="h-full w-full snap-start">
+    <section id="aliados" class="h-full min-h-screen w-full flex snap-start items-center overflow-y-auto">
       <!-- Sponsors section -->
       <Communities />
     </section>
-    <section id="invitados" class="mt-10 h-screen w-full snap-start pb-20" sm="pb-10">
+    <section id="invitados" class="mt-10 min-h-screen w-full snap-start pb-20" sm="pb-10">
       <!-- Speakers -->
       <Speakers speakersInfo={speakersInfo} />
     </section>
     <!-- Aliados section -->
     <!-- ... -->
-    <section id="patrocinadores" class="h-full w-full snap-start">
+    <section id="patrocinadores" class="h-full min-h-screen w-full flex snap-start items-center overflow-y-auto">
       <!-- Sponsors section -->
       <Sponsors />
     </section>
