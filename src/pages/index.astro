@@ -11,6 +11,7 @@ import { getImage } from 'astro:assets'
 import { getCollection } from 'astro:content'
 import Sponsors from '@components/landing/sponsors/Sponsors.astro'
 import Communities from '@components/landing/communities/Communities.astro'
+import { Benefits } from '@/components/landing/benefits/Benefits'
 
 // Get speakers data
 const speakersCollection = await getCollection('speakers')
@@ -50,9 +51,19 @@ const speakersInfo = await Promise.all<Speaker>(
   </section>
   <!-- More sections -->
   <div class="px-2" sm="px-4" md="px-12" xl="px-15%">
-    <section id="info" class="h-full min-h-screen w-full snap-start pb-20">
+    <section
+      id="info"
+      class="h-full min-h-screen w-full snap-start pb-20 flex justify-center items-center"
+    >
       <!-- Info -->
       <Info />
+    </section>
+    <section
+      id="info"
+      class="h-full min-h-screen w-full snap-start pb-20 flex justify-center items-center content-center"
+    >
+      <!-- Info -->
+      <Benefits />
     </section>
     <section id="aliados" class="h-full w-full snap-start">
       <!-- Sponsors section -->

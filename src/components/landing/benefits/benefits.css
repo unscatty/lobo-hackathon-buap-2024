@@ -1,0 +1,73 @@
+:root {
+  --main-general-color: #6c61dd;
+  --main-bg-color: #202020;
+  --secundary-bg-color: #35363a;
+  --main-font-color: #ffffff;
+  --secundary-font-color: #acacac;
+}
+
+.section__rewards {
+}
+
+.section__rewards-container {
+}
+
+.section__rewards-title {
+  margin-bottom: 24px;
+}
+
+.section__rewards-description {
+  font-size: 24px;
+  color: var(--main-font-color);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 48px;
+}
+
+.section__rewards-container--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.section__rewards-reward-box {
+  width: 100%;
+  background-color: var(--secundary-bg-color);
+  height: 300px;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.section__rewards-reward-box-title {
+  font-size: 24px;
+  color: var(--secundary-font-color);
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.section__rewards-reward-box:nth-child(1) {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.section__rewards-reward-box:nth-child(1) .section__rewards-reward-box-title {
+  font-size: 25px;
+  color: var(--secundary-font-color);
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.section__rewards-reward-box:nth-child(1) .section__rewards-reward-image {
+  width: 100%;
+}
+
+.section__rewards-reward-image {
+  width: 50%;
+}
