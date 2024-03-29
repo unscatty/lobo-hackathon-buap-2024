@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
-const { isSelected } = defineProps<{
+const { isSelected, showCountdown, remainingTime } = defineProps<{
   isSelected: boolean
+  showCountdown?: boolean
+  remainingTime?: {
+    hours: number
+    minutes: number
+    seconds: number
+  }
 }>()
 
 const codeString = `int x = 0, y = 1, z = 2;
@@ -126,6 +132,18 @@ watch(
             sm="text-3xl"
           >
             ACCESS DENIED
+          </p>
+        </div>
+        <!-- Create a countdown -->
+        <div v-if="showCountdown && remainingTime" class="">
+          <p class="text-xl font-black tracking-4" sm="text-4xl">
+            {{
+              [
+                remainingTime.hours.toString().padStart(2, '0'),
+                remainingTime.minutes.toString().padStart(2, '0'),
+                remainingTime.seconds.toString().padStart(2, '0'),
+              ].join(':')
+            }}
           </p>
         </div>
         <div class="text-center">

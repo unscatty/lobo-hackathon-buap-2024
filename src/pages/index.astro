@@ -16,18 +16,10 @@ import Communities from '@components/landing/communities/Communities.astro'
 const speakersCollection = await getCollection('speakers')
 const speakersInfo = await Promise.all<Speaker>(
   speakersCollection.map(async (speaker) => {
-    if (speaker.data.isRevealed) {
-      return {
-        ...speaker.data,
-        info: {
-          ...speaker.data.info,
-          // Get optimized image
-          imageUrl: (await getImage({ src: speaker.data.info.image })).src,
-        },
-      }
+    return {
+      ...speaker.data,
+      imageUrl: (await getImage({ src: speaker.data.image })).src,
     }
-
-    return speaker.data
   })
 )
 ---

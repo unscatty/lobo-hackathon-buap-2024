@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import hackerImage from '@assets/images/hacker.png'
 import { type Speaker } from '@/schemas/speaker.schema'
+import { onMounted, ref, toRefs, computed } from 'vue'
+import { useTimeoutPoll } from '@vueuse/core'
+import hackerImage from '@assets/images/hacker.png'
 import SpeakerInfoCard from './SpeakerInfoCard.vue'
 import SpeakerUnknown from './SpeakerUnknown.vue'
 
@@ -9,7 +11,59 @@ const { speaker, isSelected = false } = defineProps<{
   isSelected?: boolean
 }>()
 
-const imageUrl = speaker.isRevealed ? speaker.info.imageUrl : hackerImage.src
+const { isShown, revealDate, showCountdown } = toRefs(speaker)
+
+const isRevealed = ref(isShown?.value || false)
+
+const imageUrl = computed(() => (isRevealed.value ? speaker.imageUrl : hackerImage.src))
+
+const remainingTime = ref<{
+  hours: number
+  minutes: number
+  seconds: number
+}>({
+  hours: Infinity,
+  minutes: Infinity,
+  seconds: Infinity,
+})
+
+const checkRevealed = () => {
+  if (isRevealed.value) {
+    return
+  }
+
+  const currentDate = new Date()
+
+  if (revealDate?.value) {
+    const diff = revealDate.value.getTime() - currentDate.getTime()
+
+    if (showCountdown?.value) {
+      remainingTime.value = {
+        hours: Math.floor(diff / (1000 * 60 * 60)),
+        minutes: Math.floor((diff / (1000 * 60)) % 60),
+        seconds: Math.floor((diff / 1000) % 60),
+      }
+    }
+
+    if (diff <= 0) {
+      isRevealed.value = true
+      showCountdown.value = false
+      pause()
+    }
+  }
+}
+
+const { pause, resume } = useTimeoutPoll(checkRevealed, 1000)
+
+onMounted(() => {
+  if (isShown?.value || !revealDate?.value) {
+    // Ignore the countdown if the speaker is already shown
+    pause()
+  } else {
+    // Initialize the countdown
+    resume()
+  }
+})
 </script>
 
 <template>
@@ -34,13 +88,13 @@ const imageUrl = speaker.isRevealed ? speaker.info.imageUrl : hackerImage.src
     :style="{ backgroundImage: `url('${imageUrl}')` }"
   >
     <!-- Speaker info -->
-    <div v-if="speaker.isRevealed" class="h-4/7 w-full flex items-end p-2 sm:p-4">
+    <div v-if="isRevealed" class="h-4/7 w-full flex items-end p-2 sm:p-4">
       <div class="relative h-full w-full">
-        <SpeakerInfoCard :speaker-data="speaker.info" :is-selected class="absolute inset-0" />
+        <SpeakerInfoCard :speaker-data="speaker" :is-selected class="absolute inset-0" />
       </div>
     </div>
     <!-- Unknown speaker -->
-    <SpeakerUnknown v-else :is-selected />
+    <SpeakerUnknown v-else :is-selected :show-countdown :remaining-time />
 
     <!-- Overlay -->
     <div
