@@ -10,10 +10,24 @@ const { speakersInfo } = Astro.props
 
 const minSpeakers = 6
 
+// Add empty speakers to fill the slider
 if (speakersInfo.length < minSpeakers) {
   speakersInfo.push(
     ...Array.from({ length: minSpeakers - speakersInfo.length }).map(
-      () => ({ isRevealed: false, revealDate: new Date() }) as const
+      (): Speaker => ({
+        description: '',
+        image: {
+          format: 'jpg',
+          height: 0,
+          src: '',
+          width: 0,
+        },
+        name: '',
+        imageUrl: '',
+        occupation: '',
+        showCountdown: false,
+        isShown: false,
+      })
     )
   )
 }

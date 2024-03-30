@@ -1,30 +1,28 @@
-isRevealed: true
-info:
-  name: John Doe
-  occupation: CEO @ Brujeria Tech
-  description: John Doe is the CEO of Brujeria Tech, a company
-   that specializes in creating magical 
-   experiences for their clients. He has been in the industry for
-    over 10 years and has worked with some of the biggest names in the business.
-    John is passionate about creating innovative solutions that push the boundaries of what is possible.
-    afl;sa;l;asmfl;;lsalf;fasfl;;gal;l;,as;ld,sa
-    fsal;,f;as,;lf,sa;lf,;as
-    as,flasflas;fsla;
-    asfasfsfsdgl;dfmg;sdfgklmldsfkn gldfsglk ndslkg nklsd glkndslg ndlgn lkdsfnglk dnslgkndslkgnlkds glkdns lkgnd lgknds lgldksn g
-    asdasfsafl,a;fa;sfa
-    falsf;as;f;as;l,l;la;s,fl;as
-    fas,fl;as,l;f,als;,f;l,as;lf,;las,;lfsaf
-    asf,l;as,;lf,as;l,f;las,l;f,as;lf
-  alias: brujeriatech
-  title: CEO @ Brujeria Tech
-  image: "@assets/images/speakers/speaker-1.jpg"
-  socials:
-    - icon: i-arcticons:x-twitter
-      url: https://twitter.com
-    - icon: i-arcticons:linkedin
-      url: https://linkedin.com
-    - icon: i-arcticons:github
-      url: https://github.com
-    - icon: i-arcticons:linkhub
-      url: https://brujeriatech.com
-revealDate: 2021-10-01
+name: John Doe
+occupation: CEO @ Brujeria Tech
+description: John Doe is the CEO of Brujeria Tech, a company
+  that specializes in creating magical
+  experiences for their clients. He has been in the industry for
+  over 10 years and has worked with some of the biggest names in the business.
+  John is passionate about creating innovative solutions that push the boundaries of what is possible.
+  afl;sa;l;asmfl;;lsalf;fasfl;;gal;l;,as;ld,sa
+  fsal;,f;as,;lf,sa;lf,;as
+  as,flasflas;fsla;
+  asfasfsfsdgl;dfmg;sdfgklmldsfkn gldfsglk ndslkg nklsd glkndslg ndlgn lkdsfnglk dnslgkndslkgnlkds glkdns lkgnd lgknds lgldksn g
+  asdasfsafl,a;fa;sfa
+  falsf;as;f;as;l,l;la;s,fl;as
+  fas,fl;as,l;f,als;,f;l,as;lf,;las,;lfsaf
+  asf,l;as,;lf,as;l,f;las,l;f,as;lf
+alias: brujeriatech
+title: CEO @ Brujeria Tech
+image: "@assets/images/speakers/speaker-1.jpg"
+socials:
+  - icon: i-arcticons:x-twitter
+    url: https://twitter.com
+  - icon: i-arcticons:linkedin
+    url: https://linkedin.com
+  - icon: i-arcticons:github
+    url: https://github.com
+  - icon: i-arcticons:linkhub
+    url: https://brujeriatech.com
+isShown: true

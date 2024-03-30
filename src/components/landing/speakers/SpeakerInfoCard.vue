@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { SpeakerInfo } from '@/schemas/speaker.schema'
+import type { Speaker } from '@/schemas/speaker.schema'
 import { toRefs } from 'vue'
 
 const { speakerData, isSelected = false } = defineProps<{
-  speakerData: SpeakerInfo
+  speakerData: Speaker
   isSelected?: boolean
 }>()
 
