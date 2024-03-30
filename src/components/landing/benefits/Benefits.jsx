@@ -5,7 +5,7 @@ export const Benefits = () => {
   return (
     <section className="section__rewards container">
       <div className="section__rewards-container">
-        <p className="section__rewards-description font-bold">¿Por qué el Lobo Hackathon?</p>
+        <p className="section__rewards-description font-bold">¿POR QUÉ EL <span className="text-gradient">LOBO HACKATHON</span>?</p>
         <p className="mb-8 text-center text-warmgray">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eaque velit dolores
           doloribus fugiat enim quae ad non magnam itaque cupiditate officia, sunt, assumenda

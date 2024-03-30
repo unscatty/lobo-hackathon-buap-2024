@@ -12,6 +12,7 @@ import { getCollection } from 'astro:content'
 import Sponsors from '@components/landing/sponsors/Sponsors.astro'
 import Communities from '@components/landing/communities/Communities.astro'
 import { Benefits } from '@/components/landing/benefits/Benefits'
+import { HowTo } from '@/components/landing/HowTo/HowTo'
 
 // Get speakers data
 const speakersCollection = await getCollection('speakers')
@@ -64,6 +65,10 @@ const speakersInfo = await Promise.all<Speaker>(
     >
       <!-- Info -->
       <Benefits />
+    </section>
+    <section id="participar" class="h-full w-full snap-start py-10">
+      <!-- Sponsors section -->
+      <HowTo />
     </section>
     <section id="aliados" class="h-full w-full snap-start">
       <!-- Sponsors section -->

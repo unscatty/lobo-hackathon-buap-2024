@@ -14,8 +14,8 @@ const translations = {
   'hackathonBenefits.learning.title': 'Aprendizaje',
   'hackathonBenefits.learning.content':
     'No importa tu nivel de conocimiento. Nuestros mentores estarán disponibles.',
-  'whatIs.title': '¿Qué es un',
-  'whatIs.hackathonName': 'Hackathon?',
+  'whatIs.title': '¿QUÉ ES UN',
+  'whatIs.hackathonName': 'HACKATHON',
   'whatIs.description': `Un hackathon es una manera increíble de aprender nuevas habilidades, crear
     proyectos increíbles y compartir ideas. 
     Se describe mejor como un 
@@ -107,33 +107,40 @@ const WhatIs = () => {
   return (
     <section
       id="hackathonBenefits"
-      className={`flex justify-center content-center ${layout.section}`}
+      className={`grid justify-center content-center w-[100%] md:grid-cols-2 grid-rows-[auto_300px] md:grid-rows-[auto] p-20 bg-black rounded-[20px]`}
     >
       <div className={layout.sectionInfo}>
         <h2 className={`${styles.heading2}`}>
-          {t('whatIs.title')} <br className="sm:block hidden" />
-          <span className="text-gradient">{t('whatIs.hackathonName')}</span>
+          {t('whatIs.title')} <span className="text-gradient">{t('whatIs.hackathonName')}</span>?
         </h2>
-        <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Un hackathon es una manera increíble de aprender nuevas habilidades, crear proyectos
-          increíbles y compartir ideas.
+        <div className="max-w-[470px] mt-5">
+          <p className={`${styles.paragraph} `}>
+            Un hackathon es una manera increíble de aprender nuevas habilidades, crear proyectos
+            increíbles y compartir ideas.
+          </p>
           <br />
-          <br /> Se describe mejor como un "maratón de inventos". Cualquier persona interesada en la
-          tecnología asiste a un hackathon para aprender, desarrollar y compartir sus creaciones
-          durante 3 días en un ambiente relajado y acogedor.
-          <br /> <br /> ¡No es necesario ser programador ni especializarse en Ciencias de la
-          Computación!,
-        </p>
+          <p className={`${styles.paragraph} `}>
+            Se describe mejor como un "maratón de inventos". Cualquier persona interesada en la
+            tecnología asiste a un hackathon para aprender, desarrollar y compartir sus creaciones
+            durante 3 días en un ambiente relajado y acogedor.
+          </p>
+          <br />
+          <p className={`${styles.paragraph} `}>
+            ¡No es necesario ser programador ni especializarse en Ciencias de la Computación!,
+          </p>
+        </div>
       </div>
 
-      <div className={`flex-1 md:ml-10 ml-0 md:mt-0 mt-10 relative flex-col justify-start`}>
+      <div
+        className={`grid md:ml-10 ml-0 md:mt-0 mt-10 relative h-[100%] grid-rows-[auto_1fr] md:grid-rows-[min-content_1fr]`}
+      >
         <h5
-          className={`font-poppins text-gray-200 text-[24px] text-start w-full font-bold p-6 border-b-2`}
+          className={`font-poppins text-gray-200 text-[24px] text-start w-full font-bold p-6 border-b-2 h-[auto] pt-2`}
         >
           {t('whatIs.expectTitle')}
         </h5>
         <iframe
-          className="w-full h-[400px] sm:h-[500px] my-4 shadow-lg border-2 border-gray-200 rounded-[20px]"
+          className="w-full my-4 shadow-lg border-2 border-gray-200 rounded-[20px] h-[100%]"
           src="https://www.youtube.com/embed/qj4DQfYx2Hg?si=lm8XU-Brp1QHHs0r"
           title="YouTube video player"
           frameborder="0"
