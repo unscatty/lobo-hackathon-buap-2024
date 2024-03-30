@@ -21,6 +21,8 @@ export const navbarItems = [
     href: '/#patrocinadores',
   },
 ]
+
+const isPreregisterPage = pathname.startsWith('/pre-registro')
 ---
 
 <Fragment>
@@ -50,7 +52,7 @@ export const navbarItems = [
         }
         <!-- Register button -->
         {
-          pathname !== '/pre-registro' && (
+          !isPreregisterPage && (
             <li>
               <a
                 href="/pre-registro"
@@ -131,7 +133,7 @@ export const navbarItems = [
           }
           <!-- Register button -->
           {
-            pathname !== '/pre-registro' && (
+            !isPreregisterPage && (
               <li w-full>
                 <a
                   href="/pre-registro"
