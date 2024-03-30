@@ -54,14 +54,14 @@ const speakersInfo = await Promise.all<Speaker>(
   <div class="px-2" sm="px-4" md="px-12" xl="px-15%">
     <section
       id="info"
-      class="h-full min-h-screen w-full snap-start pb-20 flex justify-center items-center"
+      class="h-full min-h-screen w-full flex snap-start items-center justify-center pb-20"
     >
       <!-- Info -->
       <Info />
     </section>
     <section
       id="info"
-      class="h-full min-h-screen w-full snap-start pb-20 flex justify-center items-center content-center"
+      class="h-full min-h-screen w-full flex snap-start content-center items-center justify-center pb-20"
     >
       <!-- Info -->
       <Benefits />
@@ -70,17 +70,23 @@ const speakersInfo = await Promise.all<Speaker>(
       <!-- Sponsors section -->
       <HowTo />
     </section>
-    <section id="aliados" class="h-full w-full snap-start">
+    <section
+      id="aliados"
+      class="h-full min-h-screen w-full flex snap-start items-center overflow-y-auto"
+    >
       <!-- Sponsors section -->
       <Communities />
     </section>
-    <section id="invitados" class="mt-10 h-screen w-full snap-start pb-20" sm="pb-10">
+    <section id="invitados" class="mt-10 min-h-screen w-full snap-start pb-20" sm="pb-10">
       <!-- Speakers -->
       <Speakers speakersInfo={speakersInfo} />
     </section>
     <!-- Aliados section -->
     <!-- ... -->
-    <section id="patrocinadores" class="h-full w-full snap-start">
+    <section
+      id="patrocinadores"
+      class="h-full min-h-screen w-full flex snap-start items-center overflow-y-auto"
+    >
       <!-- Sponsors section -->
       <Sponsors />
     </section>
