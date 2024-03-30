@@ -4,6 +4,72 @@ import type { ClassyComponentProps } from '@/types/astro.types'
 interface Props extends ClassyComponentProps {}
 
 const { class: cssClass, 'class:list': cssClassList } = Astro.props
+
+interface Social {
+  name: string
+  url: string
+  icon: string
+}
+
+const socials = [
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/lobohackathon/',
+    icon: 'i-ph:instagram-logo-bold',
+  },
+  { name: ' TikTok', url: 'https://www.tiktok.com/@lobohackathon', icon: 'i-ph:tiktok-logo-bold' },
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/lobohackathon/',
+    icon: 'i-ph:facebook-logo-bold',
+  },
+  { name: 'Discord', url: 'https://discord.gg/sxuk9CuJaQ', icon: 'i-ph:discord-logo-bold' },
+]
 ---
 
-<div class:list={[cssClass, cssClassList]}>Footer</div>
+<footer
+  class:list={['flex flex-col w-full px-4 my-4 sm:px-8 md:px-10', cssClass, cssClassList]}
+  id="footer"
+>
+  <div class="flex flex-col justify-between gap-y-4" md="flex-row">
+    <div class="text-center" md="text-left">
+      <p text-lg sm="text-xl">¿Tienes alguna duda?</p>
+      <p uppercase font-title text-3xl sm="text-4xl" md="ml-8">Contáctanos</p>
+      <div my-2 w-full text-center>
+        <div flex justify-around items-center px-4>
+          {
+            socials.map(({ name, url, icon }: Social) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary"
+                transition="property-transform ease-in-out duration-150"
+                hover="transform scale-115"
+                aria-label={name}
+              >
+                <div class:list={[icon, 'hw-10']} sm="hw-12" md="hw-10" />
+              </a>
+            ))
+          }
+        </div>
+        <p text-sm mt-1 sm="text-4">Síguenos en nuestras redes oficiales</p>
+      </div>
+    </div>
+    <div text-center md="text-right">
+      <p text-lg sm="text-xl">Evento organizado por:</p>
+      <p uppercase font-title text-3xl sm="text-4xl">Una línea a la vez</p>
+      <p sm="text-lg mx-auto w-70%" md="text-xl ml-auto mr-0 w-80%" lg="w-70%">
+        Una comunidad donde puedes aprender, colaborar y crecer con otros
+      </p>
+    </div>
+  </div>
+  <!-- Separator -->
+  <div w-full my-4 border-b-2 border-b-primary></div>
+  <div>
+    <p text-center text-lg md="text-left">
+      <span block sm="inline"> © 2024 Una Línea a la Vez. </span>
+      <span block sm="inline"> Todos los derechos reservados </span>
+    </p>
+  </div>
+</footer>
