@@ -40,6 +40,7 @@
   "devDependencies": {
     "@antfu/ni": "^0.21.12",
     "@iconify-json/arcticons": "^1.1.96",
+    "@iconify-json/ph": "^1.1.11",
     "@iconify-json/solar": "^1.1.9",
     "@types/bun": "^1.0.8",
     "@types/react-vertical-timeline-component": "^3.3.6",
