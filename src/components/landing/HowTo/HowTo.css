@@ -53,16 +53,14 @@
 
 .section__how-image-box {
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   width: 400px;
   height: 400px;
-  justify-self: end;
+  align-self: center;
 }
 
-.section__how-image-box:nth-child(3) {
-  justify-self: start;
-}
 
 .section__how-image {
   height: 100%;

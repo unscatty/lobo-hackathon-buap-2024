@@ -13,8 +13,8 @@ export const HowTo = () => {
           En tres simples pasos empieza en el mundo del blockchain. Podiendo manejar tu dinero y
           ahorrando dinero
         </p>
-        <div className="section__how-container--grid">
-          <div className="section__how-text-box">
+        <div className="grid md:grid-cols-2 justify-items-center justify-center">
+          <div className="section__how-text-box order-1">
             <div>
               <h3 className="section__how-text--tile">1 - Registrate en el hackathon</h3>
               <p className="section__how-how-text--description">
@@ -23,15 +23,15 @@ export const HowTo = () => {
             </div>
           </div>
 
-          <div className="section__how-image-box">
+          <div className="section__how-image-box order-2">
             <img className="section__how-image metamask-img" src={signin.src} alt="" />
           </div>
 
-          <div className="section__how-image-box">
+          <div className="section__how-image-box order-4 md:order-3">
             <img className="section__how-image" src={challenge.src} alt="" />
           </div>
 
-          <div className="section__how-text-box">
+          <div className="section__how-text-box order-3 md:order-4">
             <div>
               <h3 className="section__how-text--tile">2 - Busca un reto </h3>
               <p className="section__how-how-text--description">
@@ -40,7 +40,7 @@ export const HowTo = () => {
             </div>
           </div>
 
-          <div className="section__how-text-box">
+          <div className="section__how-text-box order-5" >
             <div>
               <h3 className="section__how-text--tile">3 - Crea tu equipo en discord</h3>
               <p className="section__how-how-text--description">
@@ -49,7 +49,7 @@ export const HowTo = () => {
             </div>
           </div>
 
-          <div className="section__how-image-box">
+          <div className="section__how-image-box order-6">
             <img className="section__how-image" src={team.src} alt="" />
           </div>
         </div>
