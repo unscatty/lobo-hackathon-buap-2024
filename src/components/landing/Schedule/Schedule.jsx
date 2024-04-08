@@ -34,7 +34,7 @@ const schedule = [
     sessions: [
       {
         id: 'session-1',
-        time: '2024-03-18T09:00',
+        time: '2024-04-18T10:00',
         timeEnd: '2024-04-18T10:30',
         title: 'Ceremonia de Apertura',
         speaker: 'Organización Lobo Hackathon',
@@ -330,19 +330,19 @@ const Schedule = () => {
         <div className="xl:hidden flex justify-center my-5 mx-auto">
           <button
             onClick={() => setActiveDay('day-1')}
-            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-1' ? 'bg-white text-5e2176' : 'bg-5e2176 text-white'}`}
+            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-1' ? 'bg-white text-black' : 'bg-5e2176 text-white'}`}
           >
             Day 1
           </button>
           <button
             onClick={() => setActiveDay('day-2')}
-            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-2' ? 'bg-white text-5e2176' : 'bg-5e2176 text-white'}`}
+            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-2' ? 'bg-white text-black' : 'bg-5e2176 text-white'}`}
           >
             Day 2
           </button>
           <button
             onClick={() => setActiveDay('day-3')}
-            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-3' ? 'bg-white text-5e2176' : 'bg-5e2176 text-white'}`}
+            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-3' ? 'bg-white text-black': 'bg-5e2176 text-white'}`}
           >
             Day 3
           </button>

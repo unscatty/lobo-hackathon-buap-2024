@@ -101,26 +101,26 @@ const FAQs = () => {
         <h2 className={`${styles.heading2} text-center mb-5`}>Preguntas frecuentes</h2>
         <div className="flex justify-center items-start my-2 w-full">
           <div className="w-full ">
-            <ul className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+            <ul className="grid sm:grid-cols-2 grid-cols-1 sm:gap-4">
               <div className="">
                 {firstHalf.map((faq, index) => (
                   <AccordionItem
                     key={faq.id}
                     title={faq.question}
                     content={faq.answer}
-                    isOpen={openIndex === index}
-                    onToggle={() => handleToggle(index)}
+                    isOpen={openIndex === faq.id}
+                    onToggle={() => handleToggle(faq.id)}
                   />
                 ))}
               </div>
-              <div className="">
+              <div className="top-[-8px] relative ">
                 {secondHalf.map((faq, index) => (
                   <AccordionItem
                     key={faq.id}
                     title={faq.question}
                     content={faq.answer}
-                    isOpen={openIndex === index}
-                    onToggle={() => handleToggle(index)}
+                    isOpen={openIndex === faq.id}
+                    onToggle={() => handleToggle(faq.id)}
                   />
                 ))}
               </div>
