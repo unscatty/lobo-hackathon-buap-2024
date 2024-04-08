@@ -14,7 +14,7 @@ export type PreRegisterResponse =
     }
 
 export const preRegister = async (userData: PreregisterData) => {
-  const response = await fetch(`${process.env.PUBLIC_PREREGISTER_API_ENDPOINT}/pre-register`, {
+  const response = await fetch(`${import.meta.env.PUBLIC_PREREGISTER_API_ENDPOINT}/pre-register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
