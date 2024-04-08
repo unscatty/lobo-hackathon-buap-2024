@@ -16,7 +16,7 @@ const { collection, class: cssClass, 'class:list': cssClassList, ...rest } = Ast
 
 <div
   class:list={[
-    'flex flex-wrap items-center justify-center gap-x-5 gap-y-3',
+    'flex flex-wrap items-stretch justify-center gap-x-5 gap-y-3',
     cssClass,
     cssClassList,
   ]}
@@ -31,9 +31,8 @@ const { collection, class: cssClass, 'class:list': cssClassList, ...rest } = Ast
           rel="noopener noreferrer"
           class="h-full w-75% flex items-center justify-center"
           md="w-48%"
-          lg="w-30%"
-        >
-          <Image src={item.image} alt={item.name} class="object-contain" loading="lazy" />
+          >
+          <Image src={item.image} alt={item.name} class="h-40 object-contain" loading="lazy" />
         </a>
       </slot>
     ))
