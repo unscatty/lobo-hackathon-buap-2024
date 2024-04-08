@@ -13,9 +13,7 @@ export const Benefits = () => {
           ¿POR QUÉ EL <span className="text-gradient">LOBO HACKATHON</span>?
         </p>
         <p className="mb-8 text-center text-warmgray">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eaque velit dolores
-          doloribus fugiat enim quae ad non magnam itaque cupiditate officia, sunt, assumenda
-          cumque.{' '}
+        Nuestro propósito es claro: impulsar a nuestros estudiantes a desarrollar un perfil profesional sólido desde temprano.{' '}
         </p>
         <div className="section__rewards-container--grid grid md:grid-cols-2 grid-cols-1">
           <div className="section__rewards-reward-box ">
