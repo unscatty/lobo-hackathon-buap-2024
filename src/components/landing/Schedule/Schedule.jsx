@@ -342,7 +342,7 @@ const Schedule = () => {
           </button>
           <button
             onClick={() => setActiveDay('day-3')}
-            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-3' ? 'bg-white text-black': 'bg-5e2176 text-white'}`}
+            className={`px-8 md:px-16 py-2 rounded border border-5e2176 ${activeDay === 'day-3' ? 'bg-white text-black' : 'bg-5e2176 text-white'}`}
           >
             Day 3
           </button>
@@ -369,6 +369,7 @@ const Schedule = () => {
                   const now = new Date()
 
                   const isHappeningNow = now >= startTime && now <= endTime
+                  const alreadyHappened = now > endTime ? 'already-happened' : ''
 
                   // Get the hour in 12-hour format with PM and AM and minutes
                   const hour = startTime.toLocaleString('en-US', {
@@ -387,14 +388,18 @@ const Schedule = () => {
                   return (
                     <VerticalTimelineElement
                       key={session.id}
-                      className={`vertical-timeline-element--work !my-5 ${isHappeningNow ? 'happening-now' : ''}`}
+                      className={`vertical-timeline-element--work !my-5 ${alreadyHappened ? 'already-happened' : isHappeningNow ? 'happening-now' : ''}`}
                       contentArrowStyle={{
                         // borderRight: '7px solid #fff',
-                        borderRight: `7px solid ${isHappeningNow ? '#5e2176' : '#e4e4e4'}`,
+                        borderRight: `7px solid ${alreadyHappened ? '#777676' : isHappeningNow ? '#5e2176' : '#e4e4e4'}`,
                       }}
                       iconStyle={{
-                        background: isHappeningNow ? '#5e2176' : '#e3e3e3',
-                        color: isHappeningNow ? '#fff' : '#5e2176',
+                        background: alreadyHappened
+                          ? '#777676'
+                          : isHappeningNow
+                            ? '#5e2176'
+                            : '#e3e3e3',
+                        color: alreadyHappened ? '#777676' : isHappeningNow ? '#fff' : '#5e2176',
                       }}
                       date={
                         <>
@@ -403,7 +408,7 @@ const Schedule = () => {
                       }
                     >
                       <p
-                        className={`text-lg !m-0 font-semibold text-black ${isHappeningNow ? 'text-white' : 'text-gray-500'}`}
+                        className={`text-lg !m-0 font-semibold text-black ${alreadyHappened ? 'text-gray-600' : isHappeningNow ? 'text-white' : 'text-gray-500'}`}
                       >
                         {session.title}
                       </p>

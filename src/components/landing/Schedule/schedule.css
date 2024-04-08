@@ -177,6 +177,13 @@
   box-shadow: 0 3px 0 #ddd;
 }
 
+.already-happened .vertical-timeline-element-content {
+  background: #777676;
+  border-radius: 0.25em;
+  padding: 10px !important;
+  -webkit-box-shadow: 0 3px 0 #ddd;
+  box-shadow: 0 3px 0 #ddd;
+}
 
 
 .vertical-timeline-element-date {
