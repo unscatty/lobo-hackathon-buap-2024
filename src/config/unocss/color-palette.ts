@@ -1,19 +1,19 @@
 import type { Theme } from './types'
 
 // Primary color
-export const concrete = {
-  DEFAULT: '#F2F2F2',
+export const white = {
+  DEFAULT: '#FFFFFF',
   50: '#FFFFFF',
   100: '#FFFFFF',
   200: '#FFFFFF',
   300: '#FFFFFF',
   400: '#FFFFFF',
-  500: '#F2F2F2',
-  600: '#D6D6D6',
-  700: '#BABABA',
-  800: '#9E9E9E',
-  900: '#828282',
-  950: '#747474',
+  500: '#FFFFFF',
+  600: '#E3E3E3',
+  700: '#C7C7C7',
+  800: '#ABABAB',
+  900: '#8F8F8F',
+  950: '#818181',
 }
 
 // Secondary color
@@ -128,8 +128,24 @@ export const redRibbon = {
   950: '#000000',
 }
 
+// Other colors
+export const redViolet = {
+  DEFAULT: '#CB1789',
+  50: '#F5A5D7',
+  100: '#F392CF',
+  200: '#EF6EBF',
+  300: '#EA49AF',
+  400: '#E6259F',
+  500: '#CB1789',
+  600: '#991167',
+  700: '#660C45',
+  800: '#340623',
+  900: '#010001',
+  950: '#000000',
+}
+
 export const colorPalette: Theme['colors'] = {
-  primary: concrete,
+  primary: white,
   secondary: purplePizzazz,
   accent: scienceBlue,
   neutral: silver,
@@ -138,20 +154,21 @@ export const colorPalette: Theme['colors'] = {
   warn: starship,
   danger: redRibbon,
   base: {
-    50: '#e6e6e9',
-    100: '#ceced4',
-    200: '#9c9da8',
-    300: '#6b6b7d',
-    400: '#393a51',
-    500: '#080926',
-    600: '#06071e',
-    700: '#050517',
-    800: '#03040f',
-    900: '#020208',
-    DEFAULT: '#080926',
+    DEFAULT: '#0D0D0D',
+    50: '#696969',
+    100: '#5F5F5F',
+    200: '#4A4A4A',
+    300: '#363636',
+    400: '#212121',
+    500: '#0D0D0D',
+    600: '#000000',
+    700: '#000000',
+    800: '#000000',
+    900: '#000000',
+    950: '#000000',
   },
   // Add colors with their names
-  concrete,
+  white,
   purplePizzazz,
   scienceBlue,
   silver,
@@ -159,6 +176,7 @@ export const colorPalette: Theme['colors'] = {
   malibu,
   redRibbon,
   starship,
+  redViolet,
   consoleGreen: {
     DEFAULT: '#00DD00',
     50: '#96FF96',
