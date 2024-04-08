@@ -6,3 +6,4 @@ bun.lockb
 !/src/
 **/*.css
 package.json
+"/*.png\n/*.jpg\n/*.svg\n/*.yml\n/*.json"
