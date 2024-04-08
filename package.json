@@ -12,8 +12,8 @@
     "lint": "eslint --ext .ts,.astro,.js,.jsx,.tsx,.vue ./src",
     "clean": "rimraf dist",
     "astro": "astro",
-    "patch-deps": "npx patcheer apply",
-    "init-hooks": "npx simple-git-hooks"
+    "patch-deps": "patcheer apply",
+    "init-hooks": "simple-git-hooks"
   },
   "dependencies": {
     "@antfu/ni": "^0.21.12",
@@ -34,6 +34,7 @@
     "keen-slider": "^6.8.6",
     "mande": "^2.0.8",
     "notiwind": "^2.0.2",
+    "patcheer": "^1.0.5",
     "react-vertical-timeline-component": "^3.6.0",
     "typescript": "^5.4.2",
     "uvcanvas": "^0.2.1",
@@ -62,7 +63,6 @@
     "eslint-plugin-vue": "^9.22.0",
     "lint-staged": "^15.2.2",
     "parsel-js": "^1.1.2",
-    "patcheer": "^1.0.5",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
