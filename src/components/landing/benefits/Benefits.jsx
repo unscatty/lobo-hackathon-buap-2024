@@ -7,43 +7,52 @@ import student from './../../../assets/images/student.svg'
 
 export const Benefits = () => {
   return (
-    <section className="section__rewards container">
-      <div className="section__rewards-container">
-        <p className="section__rewards-description font-bold">
-          ¿POR QUÉ EL <span className="text-gradient">LOBO HACKATHON</span>?
+    <section className="section__rewards container grid justify-center content-center w-[100%]  p-20 bg-black rounded-[20px]">
+      <div className="section__rewards-container rounded-[20px]">
+        <p className=" font-bold font-title font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full text-center" >
+          ¿POR QUÉ EL <span className="text-gradient ">LOBO HACKATHON</span>?
         </p>
-        <p className="mb-8 text-center text-warmgray">
-        Nuestro propósito es claro: impulsar a nuestros estudiantes a desarrollar un perfil profesional sólido desde temprano.{' '}
+        <p className="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] text-center mt-5 max-w-[640px] m-auto">
+        Nuestro propósito es claro: impulsar a nuestros estudiantes a desarrollar un perfil profesional sólido desde temprano. 
         </p>
-        <div className="section__rewards-container--grid grid md:grid-cols-2 grid-cols-1">
+        <div className="section__rewards-container--grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <div className="section__rewards-reward-box ">
-            <p className="section__rewards-reward-box-title text-center">
+          
+            <img className="section__rewards-reward-image" src={early.src} alt="" />
+            <p className="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] text-center">
               {' '}
               Carrera profesional temprana
             </p>
-            <img className="section__rewards-reward-image" src={early.src} alt="" />
           </div>
           <div className="section__rewards-reward-box ">
-            <p className="section__rewards-reward-box-title">
+          <img className="section__rewards-reward-image" src={student.src} alt="" />
+            <p className="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] text-center">
               Aprende tu potencial como estudiante
             </p>
-            <img className="section__rewards-reward-image" src={student.src} alt="" />
+            
           </div>
 
           <div className="section__rewards-reward-box ">
-            <p className="section__rewards-reward-box-title">Desafíate a ti mismo</p>
-
             <img
               className="section__rewards-reward-image object-contain"
               src={problem.src}
               alt=""
             />
-          </div>
+            <p className="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] text-center">Desafíate a ti mismo</p>
 
-          <div className="section__rewards-reward-box ">
-            <p className="section__rewards-reward-box-title">Innova</p>
-            <img className="section__rewards-reward-image" src={innovation.src} alt="" />
+            
           </div>
+          <div className="section__rewards-reward-box ">
+            <img
+              className="section__rewards-reward-image object-contain"
+              src={innovation.src}
+              alt=""
+            />
+               <p className="font-poppins font-normal text-dimWhite text-[18px] leading-[30.8px] text-center">Innova</p>
+
+            
+          </div>
+         
         </div>
       </div>
     </section>

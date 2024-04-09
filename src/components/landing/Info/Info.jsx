@@ -110,7 +110,7 @@ const WhatIs = () => {
       className={`grid justify-center content-center w-[100%] md:grid-cols-2 grid-rows-[auto_300px] md:grid-rows-[auto] p-20 bg-black rounded-[20px]`}
     >
       <div className={layout.sectionInfo}>
-        <h2 className={`${styles.heading2}`}>
+        <h2 className={`${styles.heading2} font-title`}>
           {t('whatIs.title')} <span className="text-gradient">{t('whatIs.hackathonName')}</span>?
         </h2>
         <div className="max-w-[470px] mt-5">
@@ -135,7 +135,7 @@ const WhatIs = () => {
         className={`grid md:ml-10 ml-0 md:mt-0 mt-10 relative h-[100%] grid-rows-[auto_1fr] md:grid-rows-[min-content_1fr]`}
       >
         <h5
-          className={`font-poppins text-gray-200 text-[24px] text-start w-full font-bold p-6 border-b-2 h-[auto] pt-2`}
+          className={`font-poppins text-gray-200 text-[24px] text-start w-full font-bold p-6 border-b-2 h-[auto] pt-2 font-title`}
         >
           {t('whatIs.expectTitle')}
         </h5>
