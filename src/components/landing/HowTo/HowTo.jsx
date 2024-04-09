@@ -10,8 +10,7 @@ export const HowTo = () => {
       <div className="section__how-container">
         <h2 className="subtitle section__how-title">Únete hoy al hackathon</h2>
         <p className="section__how-description">
-          En tres simples pasos empieza en el mundo del blockchain. Podiendo manejar tu dinero y
-          ahorrando dinero
+          En tres simples pasos puedes unirte al hackathon y comenzar a trabajar en tu proyecto.
         </p>
         <div className="grid md:grid-cols-2 justify-items-center justify-center">
           <div className="section__how-text-box order-1">
