@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index 38069da9fe3d3216122c47bd85e223d0f06cfe7f..ce5bcb638704e184db9a36f989ce5587424b2fda 100755
+--- a/package.json
++++ b/package.json
+@@ -5,6 +5,7 @@
+   "main": "keen-slider.cjs.js",
+   "jsnext:main": "keen-slider.es.js",
+   "module": "keen-slider.es.js",
++  "type": "module",
+   "types": "keen-slider.d.ts",
+   "files": [
+     "keen-slider.*",

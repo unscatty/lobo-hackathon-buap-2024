@@ -1,10 +1,10 @@
 import React from '@astrojs/react'
 import Sitemap from '@astrojs/sitemap'
 import Vue from '@astrojs/vue'
-import bun from 'astro-bun-adapter'
+import node from '@astrojs/node'
 import AstroFontPicker from 'astro-font-picker'
 import Icon from 'astro-icon'
-import { defineConfig, squooshImageService } from 'astro/config'
+import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import { loadEnv } from 'vite'
 
@@ -24,14 +24,16 @@ console.log('\x1b[34m%s\x1b[0m', `Astro's SITE_URL: ${SITE_URL}`)
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: bun(),
+  adapter: node({
+    mode: 'standalone'
+  }),
   server: {
     port: parseInt(PORT),
     host: HOST,
   },
-  image: {
-    service: squooshImageService(),
-  },
+  // image: {
+  //   service: squooshImageService(),
+  // },
   site: SITE_URL,
   integrations: [
     UnoCSS({

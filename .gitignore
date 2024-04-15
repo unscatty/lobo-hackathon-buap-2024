@@ -33,5 +33,5 @@ package-lock.json
 # yarn lock file
 yarn.lock
 
-# pnpm lock file
-pnpm-lock.yaml
+# bun lock file
+bun.lockb

@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3000",
-    "start": "nr dev",
+    "start": "node dist/server/entry.mjs",
     "build": "astro build",
     "build:check": "astro check && nr build",
     "preview": "astro preview",
@@ -12,21 +12,20 @@
     "lint": "eslint --ext .ts,.astro,.js,.jsx,.tsx,.vue ./src",
     "clean": "rimraf dist",
     "astro": "astro",
-    "patch-deps": "patcheer apply",
     "init-hooks": "simple-git-hooks"
   },
   "dependencies": {
     "@antfu/ni": "^0.21.12",
     "@astrojs/check": "^0.5.6",
-    "@astrojs/react": "^3.0.10",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/react": "^3.3.0",
     "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/vue": "^4.0.8",
+    "@astrojs/vue": "^4.1.0",
     "@headlessui/vue": "^1.7.19",
     "@unocss/preset-mini": "^0.59.0",
     "@vee-validate/zod": "^4.12.6",
     "@vueuse/core": "^10.9.0",
     "astro": "^4.4.15",
-    "astro-bun-adapter": "^1.0.2",
     "astro-font": "^0.0.77",
     "astro-font-picker": "^0.2.1",
     "astro-icon": "^1.1.0",
@@ -34,11 +33,14 @@
     "keen-slider": "^6.8.6",
     "mande": "^2.0.8",
     "notiwind": "^2.0.2",
-    "patcheer": "^1.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-vertical-timeline-component": "^3.6.0",
+    "sharp": "^0.33.3",
     "typescript": "^5.4.2",
     "uvcanvas": "^0.2.1",
     "vee-validate": "^4.12.6",
+    "vue": "^3.4.22",
     "zod": "^3.22.4",
     "zod-i18n-map": "^2.27.0"
   },
@@ -47,7 +49,7 @@
     "@iconify-json/ph": "^1.1.11",
     "@iconify-json/solar": "^1.1.9",
     "@julr/unocss-preset-heropatterns": "^1.0.2",
-    "@types/bun": "^1.0.8",
+    "@types/node": "^20.12.7",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
@@ -68,14 +70,19 @@
     "prettier-plugin-astro": "^0.13.0",
     "rimraf": "^5.0.5",
     "simple-git-hooks": "^2.10.0",
-    "unocss": "^0.58.5",
-    "vite": "^5.1.5",
+    "unocss": "^0.59.2",
+    "vite": "^5.2.8",
     "vue-eslint-parser": "^9.4.2"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*.{ts,astro,js,jsx,tsx,vue}": "eslint --fix"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "keen-slider@6.8.6": "patches/keen-slider@6.8.6.patch"
+    }
   }
 }

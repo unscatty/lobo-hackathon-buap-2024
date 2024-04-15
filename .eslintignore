@@ -1,9 +1,11 @@
-# Bun lockfile
-bun.lockb
+# pnpm lockfile
+pnpm-lock.yaml
 
 # Evertyhing outside src folder
 /*
 !/src/
 **/*.css
 package.json
-"/*.png\n/*.jpg\n/*.svg\n/*.yml\n/*.jso
+
+# Patches folder
+patches/

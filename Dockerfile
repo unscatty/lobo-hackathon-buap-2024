@@ -2,29 +2,26 @@ ARG SITE_URL=http://localhost:3000
 ARG PORT=3000
 ARG PUBLIC_PREREGISTER_API_ENDPOINT
 
-FROM oven/bun:1.0.20-debian as base
+FROM node:20.10.0 as base
 
 WORKDIR /app
 
-COPY package.json .
-COPY bun.lockb .
+# Env vars for pnpm
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+COPY package.json pnpm-lock.yaml ./
 # Patches
 COPY patches patches
 
 # Production dependencies
 FROM base as prod-deps
-RUN bun install --frozen-lockfile --production
-# Patch dependencies
-RUN bun run patch-deps
-
-# Development dependencies
-FROM base as dev-deps
-RUN bun install --frozen-lockfile
-# Patch dependencies
-RUN bun run patch-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod=true --frozen-lockfile
 
 # Build the app
-FROM dev-deps as build
+FROM base as build
+
 ARG SITE_URL
 ARG PORT
 ARG PUBLIC_PREREGISTER_API_ENDPOINT
@@ -35,11 +32,14 @@ ENV PORT ${PORT}
 ENV SITE_URL ${SITE_URL}
 ENV PUBLIC_PREREGISTER_API_ENDPOINT ${PUBLIC_PREREGISTER_API_ENDPOINT}
 
+# Install all dependencies
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod=false --frozen-lockfile
+
 COPY . .
-RUN bun run build
+RUN pnpm run build
 
 
-FROM oven/bun:1.1-alpine as release
+FROM node:20.10.0-alpine as release
 ARG PORT
 
 WORKDIR /app
@@ -52,4 +52,4 @@ COPY public public
 
 EXPOSE ${PORT}
 
-CMD ["bun", "run", "./dist/server/entry.mjs"]
+CMD ["node", "./dist/server/entry.mjs"]
