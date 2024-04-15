@@ -12,8 +12,4 @@ socials:
     url: https://twitter.com/rrenoud
   - icon: i-arcticons:linkedin
     url: https://www.linkedin.com/in/rodrigorenoud/
-  - icon: i-arcticons:github
-    url: https://github.com
-  - icon: i-arcticons:linkhub
-    url: https://brujeriatech.com
 isShown: true

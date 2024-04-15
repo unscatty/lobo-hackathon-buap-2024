@@ -50,7 +50,7 @@ const cornerStrokeWidth = 'stroke-width-2% sm:stroke-width-2%'
     <div class="block h-full overflow-y-scroll px-3 py-1.5">
       <!-- Header -->
       <div>
-        <div class="border-b-2 border-console-green border-dashed text-xs line-height-4.5">
+        <div class="border-b-2 border-console-green border-dashed text-sm line-height-4.5">
           <p flex justify-between uppercase>
             <span> LHB Systems (tm) </span>
             <span>Lobo Hackathon Buap</span>
@@ -65,11 +65,14 @@ const cornerStrokeWidth = 'stroke-width-2% sm:stroke-width-2%'
         </div>
       </div>
       <!-- Speaker data -->
-      <div class="mt-2 flex flex-col gap-1.5 text-xl line-height-4">
+      <div class="mt-2 flex flex-col gap-1.5 text-lg line-height-4" md="text-xl">
         <div v-if="alias" text-lg line-height-2>
           <p>{{ '> ' }}info --for={{ alias }} --format</p>
         </div>
-        <div class="flex flex-col gap-0.66 pl-2">
+        <div v-else text-lg line-height-2>
+          <p>{{ '> ' }}info --format</p>
+        </div>
+        <div class="flex flex-col gap-2 pl-2 py-2">
           <div>
             <p>
               <span font-bold uppercase>Nombre:</span>
@@ -89,7 +92,7 @@ const cornerStrokeWidth = 'stroke-width-2% sm:stroke-width-2%'
             </p>
           </div>
           <div>
-            <p text-lg line-height-4 tracking-tighter>
+            <p line-height-4 tracking-tighter>
               <span font-bold uppercase>Descripción:</span>
               {{ ' ' }}
               <span text-justify>
@@ -97,7 +100,7 @@ const cornerStrokeWidth = 'stroke-width-2% sm:stroke-width-2%'
               </span>
             </p>
           </div>
-          <div v-if="socials && socials.length > 1">
+          <div v-if="socials && socials.length > 0">
             <p>
               <span font-bold uppercase>Redes:</span>
             </p>
