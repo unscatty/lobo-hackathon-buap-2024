@@ -33,13 +33,22 @@ const schedule = [
     date: '18 de Abril',
     sessions: [
       {
+        id: 'session-0',
+        time: '2024-04-18T09:00',
+        timeEnd: '2024-04-18T09:50',
+        title: 'Llegada y Registro',
+        speaker: 'Lobo Hackathonero',
+        description:
+          '¡Bienvenidos a la primera edición de Lobo Hackathon BUAP! Registrate y obten tu gafete.',
+      },
+      {
         id: 'session-1',
         time: '2024-04-18T10:00',
         timeEnd: '2024-04-18T10:30',
         title: 'Ceremonia de Apertura',
         speaker: 'Organización Lobo Hackathon',
         description:
-          '¡Bienvenidos a la primera edición de Lobo Hackathon! Iniciamos con la ceremonia de apertura, donde se dará la bienvenida a todos los asistentes y se presentará el programa del evento.',
+          'Iniciamos con la ceremonia de apertura, donde se dará la bienvenida a todos los asistentes y se presentará el programa del evento.',
       },
 
       {
@@ -54,11 +63,19 @@ const schedule = [
 
       {
         id: 'session-3',
-        time: '2024-04-18T13:30',
-        timeEnd: '2024-04-18T14:15',
-        title: 'Key Note Speaker',
-        speaker: 'TODO',
-        description: 'TODO',
+        time: '2024-04-18T12:15',
+        timeEnd: '2024-04-18T13:00',
+        title: 'Balam Sanchez Ibarra',
+        speaker: 'Lobo Hackathonero',
+        description: 'De script kiddie a especialista en ciberseguridad. Cómo lograrlo?',
+      },
+      {
+        id: 'session-3.1',
+        time: '2024-04-18T13:15',
+        timeEnd: '2024-04-18T14:10',
+        title: 'Ana Cunha',
+        speaker: 'Senior Developer Advocate at AWS',
+        description: '',
       },
 
       {
@@ -66,7 +83,7 @@ const schedule = [
         time: '2024-04-18T14:30',
         timeEnd: '2024-04-18T15:30',
         title: 'Comida + Panel Interns (2:45 PM)',
-        speaker: 'Hackathoneros',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de recargar energías! Tendremos un receso para que puedas disfrutar de un delicioso almuerzo y continuar con las actividades del día. Mientras tanto podrás disfrutar de un panel de internos de diferentes empresas.',
       },
@@ -86,17 +103,17 @@ const schedule = [
         time: '2024-04-18T07:15',
         timeEnd: '2024-04-18T08:00',
         title: 'Cierre de instalaciones (8:00 PM)',
-        speaker: 'Participantes',
+        speaker: 'Lobo Hackathonero',
         description:
-          'Es hora de cerrar las instalaciones y dar por terminado el primer día de actividades. ¡Gracias por tu participación!',
+          'Es hora de cerrar las instalaciones y prerarse para las actividades nocturnas. Aqui no para la fiesta. ¡Gracias por tu participación!',
       },
 
       {
         id: 'session-7',
         time: '2024-04-18T20:00',
         timeEnd: '2024-04-18T21:00',
-        title: 'Cargar primer entregable en la plataforma Devpost',
-        speaker: 'Participantes',
+        title: 'Cargar primer entregable',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de cargar tu primer entregable en la plataforma Devpost! Recuerda que tienes hasta las 9:00 PM para hacerlo. El formato es txt y debe describir la idea que se llevara acabo durante el evento.',
       },
@@ -106,7 +123,7 @@ const schedule = [
         time: '2024-04-18T22:00',
         timeEnd: '2024-04-18T23:00',
         title: 'Cena',
-        speaker: 'Hackathoneros',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de recargar energías! Tendremos un receso para que puedas disfrutar de una deliciosa cena y continuar con las actividades del día.',
       },
@@ -116,7 +133,7 @@ const schedule = [
         time: '2024-04-18T23:00',
         timeEnd: '2024-04-19T01:00',
         title: 'Torneo de Esports',
-        speaker: 'Cualquiera',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de divertirse! Participa en el torneo de Esports que se llevará a cabo en el área de descanso. ¡No te lo pierdas!',
       },
@@ -133,27 +150,27 @@ const schedule = [
         time: '2024-04-18T23:00',
         timeEnd: '2024-04-19T01:00',
         title: 'Torneo de Esports',
-        speaker: 'Cualquiera',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de divertirse! Participa en el torneo de Esports que se llevará a cabo en el área de descanso. ¡No te lo pierdas!',
       },
 
       {
         id: 'session-2',
-        time: '2024-04-19T07:00',
-        timeEnd: '2024-04-19T08:00',
+        time: '2024-04-19T08:00',
+        timeEnd: '2024-04-19T09:00',
         title: 'Yoga',
-        speaker: 'Cualquiera',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de divertirse! Participa en el torneo de Esports que se llevará a cabo en el área de descanso. ¡No te lo pierdas!',
       },
 
       {
         id: 'session-3',
-        time: '2024-04-19T08:00',
-        timeEnd: '2024-04-19T09:00',
+        time: '2024-04-19T09:00',
+        timeEnd: '2024-04-19T10:00',
         title: 'Desayuno',
-        speaker: 'Cualquiera',
+        speaker: 'Lobo Hackathonero',
         description:
           '¡Es hora de recargar energías! Tendremos un receso para que puedas disfrutar de un delicioso desayuno y continuar con las actividades del día.',
       },
@@ -247,8 +264,8 @@ const schedule = [
 
       {
         id: 'session-2',
-        time: '2024-04-20T07:00',
-        timeEnd: '2024-04-20T08:00',
+        time: '2024-04-20T07:30',
+        timeEnd: '2024-04-20T07:35',
         title: 'Entregable Final',
         speaker: 'Hackathoneros',
         description: `Entregables finales a subir a devPost:
@@ -259,8 +276,8 @@ const schedule = [
 
       {
         id: 'session-3',
-        time: '2024-04-20T08:00',
-        timeEnd: '2024-04-20T09:00',
+        time: '2024-04-20T07:40',
+        timeEnd: '2024-04-20T09:15',
         title: 'Deliberacion',
         speaker: 'Jueces',
         description: `Espacio donde lo jueces de cada reto tendran tiempo de revisar los entregables y finales y nombraran a los 3 finalistas.`,

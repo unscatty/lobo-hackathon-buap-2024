@@ -1,0 +1,13 @@
+name: Daniela Espinosa  
+occupation: Estudiante de Ing de Software / GitHub Campus Expert
+description: "Actualmente soy Estudiante de Ingeniería de Software en la Universidad Veracruzana,  trabajo como desarrolladora Front-End en Flutter
+Formo parte de diversas comunidades tecnológicas en la región lo cual me ha llevado a ser actualmente GitHub Campus Expert"
+image: "@assets/images/speakers/daniela.jpg"
+socials:
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/danielaaer/
+  - icon: i-arcticons:github
+    url: https://github.com/DanielaaER
+  - icon: i-arcticons:instagram
+    url: https://www.instagram.com/danielaa_er/
+isShown: true

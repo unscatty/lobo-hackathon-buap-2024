@@ -1,0 +1,10 @@
+name: Nelly Andrade 
+occupation: LATAM Senior Community Programs Manager @ Amazon Web Services (AWS)
+description: "With over 9 years of experience in leading global and regional community programs, I am passionate about creating positive social change and empowering diverse voices through technology, entrepreneurship, and sustainability."
+image: "@assets/images/speakers/nelly.jpeg"
+socials:
+  - icon: i-arcticons:x-twitter
+    url: https://twitter.com/nellyandrade
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/nellyandrade/
+isShown: true

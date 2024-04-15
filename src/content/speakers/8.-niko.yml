@@ -1,0 +1,11 @@
+name: Nicolas Chavez
+occupation: Gold MLSA | TechMania | Aspiring PM | Notion Campus Leader | No-Code Developer
+description: "Estudiante de ingeniería, amante de la innovación y la tecnología. En búsqueda de oportunidades en el sector TI, sobre todo en gestión de proyectos o roles relacionados a PM."
+image: "@assets/images/speakers/niko.jpeg"
+alias: Niko
+socials:
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/nikomagafi/
+  - icon: i-arcticons:instagram
+    url: https://www.instagram.com/nik.oding/
+isShown: true

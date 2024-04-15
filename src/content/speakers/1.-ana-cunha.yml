@@ -1,0 +1,20 @@
+name: Ana Cunha 
+occupation: Senior Developer Advocate at AWS
+description: "I’m Ana, a Software Developer based in Brazil.
+
+I currently work as a Developer Advocate at Amazon Web Services, engaging with developers and helping them make the best use of the cloud. ☁️
+
+Prior to joining AWS, I was a Software Development Engineer at Amazon.com. I also hold an M.S. in Computer Science from Northeastern University and a B.S. in Information Systems from PUCRS.
+
+I’m passionate about video games, craft beers, Taylor Swift, and coffee. ☕"
+image: "@assets/images/speakers/ana-cunha.png"
+socials:
+  - icon: i-arcticons:x-twitter
+    url: https://twitter.com/mcunhaana
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/analuizacunha/
+  - icon: i-arcticons:github
+    url: https://github.com/anacunha
+  - icon: i-arcticons:linkhub
+    url: https://anacunha.dev/
+isShown: true

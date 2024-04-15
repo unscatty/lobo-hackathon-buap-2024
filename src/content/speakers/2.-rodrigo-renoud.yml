@@ -1,0 +1,19 @@
+name: Rodrigo Renoud Rojas
+occupation: Global Cyber Defense Manager @T-Systems México
+description: "IT Security Professional with 15+ years experience in complex, corporate and global environments. 
+
+Passionate about helping organizations achieve maximum benefit from their IT infrastructure investment, through meticulous planning, design and on-time/budget project deployments.
+
+I consider myself a non-orthodox problem solver and a great team player."
+image: "@assets/images/speakers/rodrigo.jpeg"
+alias: R3
+socials:
+  - icon: i-arcticons:x-twitter
+    url: https://twitter.com/rrenoud
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/rodrigorenoud/
+  - icon: i-arcticons:github
+    url: https://github.com
+  - icon: i-arcticons:linkhub
+    url: https://brujeriatech.com
+isShown: true

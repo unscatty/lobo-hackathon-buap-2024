@@ -1,0 +1,8 @@
+name: Alondra Sánchez 
+occupation: CX Data Engineer II @Hewlett Packard Enterprise
+description: "As a Data Engineer II at Hewlett Packard Enterprise, I leverage my cloud and data expertise to deliver innovative solutions for business operations and process automation. I work with cross-functional teams to design, develop, and deploy scalable and reliable data pipelines and applications using ETL tools, and AWS services."
+image: "@assets/images/speakers/alondra.jpg"
+socials:
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/alondra-sanchez-molina/
+isShown: true

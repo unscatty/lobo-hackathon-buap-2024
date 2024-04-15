@@ -1,0 +1,11 @@
+name: Juan Pablo Muñiz  
+occupation: Incoming Software Engineer Intern @ Microsoft
+description: "Since I was little, I have been interested in what was inside things. At thirteen years old with that curiosity, I started my first 'Hello World' in python. From then on, my curiosity about what was inside computers became a passion."
+image: "@assets/images/speakers/muniz.jpeg"
+alias: Muñiz
+socials:
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/devleon00/
+  - icon: i-arcticons:github
+    url: https://github.com/devleon00
+isShown: true

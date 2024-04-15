@@ -1,0 +1,12 @@
+name: Monica Canaza
+occupation: Software Engineering | Program Manager | Consultant Research & Educator
+description: "Me interesan crear cosas que las personas amen usar, los algoritmos, la programación, diseño, marketing y gestión de proyectos, educación, matemática, análisis de datos, inteligencia artificial, el arte y las personas 💜, entusiasta en difundir sobre desarrollo tecnológico."
+image: "@assets/images/speakers/monica-canaza.jpeg"
+socials:
+  - icon: i-arcticons:x-twitter
+    url: https://twitter.com/moni_hikari
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/monica-canaza/
+  - icon: i-arcticons:instagram
+    url: https://www.instagram.com/moni_hikari/
+isShown: true

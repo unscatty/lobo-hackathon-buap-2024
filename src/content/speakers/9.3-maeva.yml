@@ -1,0 +1,14 @@
+name: Daniel Armas Ramírez  
+occupation: Estudiante de Ciencia de Datos en ESCOM, Data Science intern en CompletaMente, Incoming SWE intern en Microsoft
+description: "Hello everyone, my name is Daniel, I'm a software developer located in Mexico, Microsoft Learn Student Ambassador, and a Data Science student at ESCOM-IPN, I'm passionate about the world of computer science, especially data science and competitive programming."
+image: "@assets/images/speakers/armas.jpeg"
+socials:
+  - icon: i-arcticons:linkedin
+    url: https://www.linkedin.com/in/darmasrmz/
+  - icon: i-arcticons:github
+    url: https://github.com/daniel692a
+  - icon: i-arcticons:instagram
+    url: https://www.instagram.com/darmasrmz/
+  - icon: i-arcticons:linkhub
+    url: https://darmasrmz.vercel.app/
+isShown: true
