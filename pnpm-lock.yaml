@@ -24,7 +24,7 @@ importers:
         version: 0.5.10(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
       '@astrojs/node':
         specifier: ^8.2.5
-        version: 8.2.5(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))
+        version: 8.2.5(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))
       '@astrojs/react':
         specifier: ^3.3.0
         version: 3.3.0(@types/react-dom@18.2.25)(@types/react@18.2.78)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.9(@types/node@20.12.7))
@@ -33,7 +33,7 @@ importers:
         version: 3.1.2
       '@astrojs/vue':
         specifier: ^4.1.0
-        version: 4.1.0(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))(vite@5.2.9(@types/node@20.12.7))(vue@3.4.22(typescript@5.4.5))
+        version: 4.1.0(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))(vite@5.2.9(@types/node@20.12.7))(vue@3.4.22(typescript@5.4.5))
       '@auth/core':
         specifier: ^0.18.6
         version: 0.18.6
@@ -59,20 +59,20 @@ importers:
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.22(typescript@5.4.5))
       astro:
-        specifier: ^4.4.15
-        version: 4.6.1(@types/node@20.12.7)(typescript@5.4.5)
+        specifier: ^4.6.2
+        version: 4.6.2(@types/node@20.12.7)(typescript@5.4.5)
       astro-font:
         specifier: ^0.0.77
         version: 0.0.77(patch_hash=rc35hfkxzney624qa6g35vt2zu)
       astro-font-picker:
         specifier: ^0.2.1
-        version: 0.2.1(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))
+        version: 0.2.1(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))
       astro-icon:
         specifier: ^1.1.0
         version: 1.1.0
       auth-astro:
         specifier: ^4.1.1
-        version: 4.1.1(@auth/core@0.18.6)(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))(next@14.2.1(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 4.1.1(@auth/core@0.18.6)(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))(next@14.2.1(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       drizzle-orm:
         specifier: ^0.30.7
         version: 0.30.8(@types/react@18.2.78)(pg@8.11.5)(postgres@3.4.4)(react@18.2.0)
@@ -1366,6 +1366,9 @@ packages:
   '@types/cheerio@0.22.35':
     resolution: {integrity: sha512-yD57BchKRvTV+JD53UZ6PD8KWY5g5rvvMLRnZR3EQBCZXiDT/HR+pKpMzFGlWNhFrXlo7VPZXtKvIEwZkAWOIA==}
 
+  '@types/cookie@0.5.4':
+    resolution: {integrity: sha512-7z/eR6O859gyWIAjuvBWFzNURmf2oPBmJlfVWkwehU5nzIyjwBsTh7WMmEEV4JFnHuQ3ex4oyTvfKzcyJVDBNA==}
+
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
@@ -1854,8 +1857,8 @@ packages:
   astro-icon@1.1.0:
     resolution: {integrity: sha512-Nksc09p7UuHeMcPNS9w1pKqRw3+wEmmh0A3FJW+FNXvqaeWI4RLvD1MCWErpY3Z5Cvad317rvLdik/Hg8GEk8Q==}
 
-  astro@4.6.1:
-    resolution: {integrity: sha512-gcL22NEhuRi4wu9/x5Kn2eJf7nT6GeU5BxdN6AHbUnX6UzEDIWtpgHs5lBIZYExKbHKN9PjEGXWQzQtFwLU+5g==}
+  astro@4.6.2:
+    resolution: {integrity: sha512-Kl+Wd7MJMQFnI3+V0JxF4HPbs8M67eltqQgtztReOwDLSl0VnOd39rM61W/3LEh10FZ0F13xrDgtdgfXzuLVbg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -4994,9 +4997,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@8.2.5(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))':
+  '@astrojs/node@8.2.5(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))':
     dependencies:
-      astro: 4.6.1(@types/node@20.12.7)(typescript@5.4.5)
+      astro: 4.6.2(@types/node@20.12.7)(typescript@5.4.5)
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -5035,12 +5038,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vue@4.1.0(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))(vite@5.2.9(@types/node@20.12.7))(vue@3.4.22(typescript@5.4.5))':
+  '@astrojs/vue@4.1.0(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))(vite@5.2.9(@types/node@20.12.7))(vue@3.4.22(typescript@5.4.5))':
     dependencies:
       '@vitejs/plugin-vue': 5.0.4(vite@5.2.9(@types/node@20.12.7))(vue@3.4.22(typescript@5.4.5))
       '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.2.9(@types/node@20.12.7))(vue@3.4.22(typescript@5.4.5))
       '@vue/compiler-sfc': 3.4.22
-      astro: 4.6.1(@types/node@20.12.7)(typescript@5.4.5)
+      astro: 4.6.2(@types/node@20.12.7)(typescript@5.4.5)
       vue: 3.4.22(typescript@5.4.5)
     transitivePeerDependencies:
       - supports-color
@@ -5880,6 +5883,8 @@ snapshots:
     dependencies:
       '@types/node': 20.12.7
 
+  '@types/cookie@0.5.4': {}
+
   '@types/cookie@0.6.0': {}
 
   '@types/debug@4.1.12':
@@ -6600,9 +6605,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-font-picker@0.2.1(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5)):
+  astro-font-picker@0.2.1(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5)):
     dependencies:
-      astro: 4.6.1(@types/node@20.12.7)(typescript@5.4.5)
+      astro: 4.6.2(@types/node@20.12.7)(typescript@5.4.5)
       webfontloader: 1.6.28
 
   astro-font@0.0.77(patch_hash=rc35hfkxzney624qa6g35vt2zu): {}
@@ -6615,7 +6620,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5):
+  astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.7.1
       '@astrojs/internal-helpers': 0.4.0
@@ -6628,6 +6633,7 @@ snapshots:
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
       '@types/babel__core': 7.20.5
+      '@types/cookie': 0.5.4
       acorn: 8.11.3
       aria-query: 5.3.0
       axobject-query: 4.0.0
@@ -6697,10 +6703,10 @@ snapshots:
       '@astrojs/compiler': 2.7.1
       synckit: 0.9.0
 
-  auth-astro@4.1.1(@auth/core@0.18.6)(astro@4.6.1(@types/node@20.12.7)(typescript@5.4.5))(next@14.2.1(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  auth-astro@4.1.1(@auth/core@0.18.6)(astro@4.6.2(@types/node@20.12.7)(typescript@5.4.5))(next@14.2.1(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@auth/core': 0.18.6
-      astro: 4.6.1(@types/node@20.12.7)(typescript@5.4.5)
+      astro: 4.6.2(@types/node@20.12.7)(typescript@5.4.5)
       next-auth: 4.24.7(next@14.2.1(@babel/core@7.24.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       set-cookie-parser: 2.6.0
     transitivePeerDependencies:
