@@ -9,6 +9,9 @@ interface ImportMetaEnv {
   readonly PUBLIC_PREREGISTER_API_ENDPOINT: string
   readonly PUBLIC_API_ENDPOINT: string
 
+  // Registration
+  readonly PUBLIC_REGISTRATION_FORMS_URL: string
+
   // Sqids
   readonly SQIDS_ALPHABET: string
   readonly USER_SQID_SALT: string

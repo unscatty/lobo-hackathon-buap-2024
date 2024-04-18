@@ -84,6 +84,34 @@ const isMyTeam = myTeamInfo?.creator.id === currentUser.id
       </SignOut>
     </div>
 
+    <div class="flex flex-wrap items-center justify-center gap-x-4">
+      <p text-center>Da click aquí para completar tu registro:</p>
+      <a
+        href={import.meta.env.PUBLIC_REGISTRATION_FORMS_URL}
+        class:list={[
+          'relative',
+          'inline-block',
+          'text-center',
+          'tracking-[0.3em]',
+          'text-sm',
+          'font-bold',
+          'mx-auto',
+          'uppercase',
+          'px-6',
+          'py-2',
+          'border-2',
+          'border-solid',
+          'border-primary',
+          'text-primary',
+        ]}
+        hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
+        focus="btn-glitch1 text-base before:-scale-y-100"
+        data-glitch-text="Completar registro"
+      >
+        Completar registro
+      </a>
+    </div>
+
     <div class="no-border card flex flex-col">
       <p font-title text-2xl mb-4>Mi equipo</p>
       {
