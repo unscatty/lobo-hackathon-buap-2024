@@ -1,0 +1,72 @@
+---
+import MainLayout from '@layouts/Main.astro'
+import { db } from '@server/db'
+import { getCurrentUserWithSqid } from '@server/services/user.service'
+import { SignIn } from 'auth-astro/components'
+import { getSession } from 'auth-astro/server'
+
+const session = await getSession(Astro.request)
+
+if (session) {
+  const currentUser = await getCurrentUserWithSqid(session, db)
+
+  if (!currentUser) {
+    return
+  }
+
+  return Astro.redirect(`/usuarios/${currentUser.sqid}`)
+}
+
+interface SigninProvider {
+  name: string
+  icon: string
+  displayName: string
+}
+
+const providers: SigninProvider[] = [
+  {
+    name: 'github',
+    icon: 'i-ph:github-logo',
+    displayName: 'GitHub',
+  },
+  {
+    name: 'discord',
+    icon: 'i-ph:discord-logo',
+    displayName: 'Discord',
+  },
+]
+---
+
+<MainLayout
+  title="Inicio de sesión"
+  description=""
+  class="flex grow flex-col"
+  body-class="flex flex-col h-full justify-between"
+>
+  <div class="my-auto h-full w-full flex grow flex-col items-center justify-around">
+    <h1 class="text-2xl font-bold font-title">Acceder</h1>
+    <div class="w-full flex flex-col items-center justify-between gap-y-2" md="w-75%" xl="w-35%">
+      {
+        providers.map((provider) => (
+          <SignIn
+            provider={provider.name}
+            class:list={[
+              'group/glitch1 flex gap-x-4 justify-center items-center text-white card py-2 px-4',
+              'w-90%',
+              'sm:(gap-x-8 min-w-96 w-96)',
+              'md:(gap-x-8 w-96)',
+            ]}
+          >
+            <div class:list={[provider.icon, 'hw-6 text-white']} />
+            <span
+              class="glitch1-glitch-hover"
+              data-glitch-text={`Acceder con ${provider.displayName}`}
+            >
+              <span class="glitch1-glitch-text-hover">Acceder con {provider.displayName}</span>
+            </span>
+          </SignIn>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,41 @@
+---
+import MainLayout from '@layouts/Main.astro'
+import { db } from '@server/db'
+import { getCurrentUserWithSqid } from '@server/services/user.service'
+import { getSession } from 'auth-astro/server'
+import CreateTeamForm from '@components/teams/CreateTeamForm.vue'
+
+const session = await getSession(Astro.request)
+
+if (!session) {
+  return Astro.redirect('/acceder')
+}
+
+const currentUser = await getCurrentUserWithSqid(session, db)
+
+if (!currentUser) {
+  return Astro.redirect('/acceder')
+}
+
+if (currentUser.teamId) {
+  // User already has a team
+  return Astro.redirect(`/usuarios/${currentUser.sqid}`)
+}
+---
+
+<MainLayout
+  title="Crear equipo"
+  description=""
+  class="flex grow flex-col"
+  body-class="flex flex-col h-full justify-between"
+>
+  <div
+    class="my-auto h-full w-full flex grow flex-col items-center justify-start px-4"
+    md="w-80% mx-auto"
+    lg="w-1/2"
+  >
+    <h1 class="text-4xl font-title">Crear equipo</h1>
+    <!-- TODO: change redirectUrl -->
+    <CreateTeamForm client:load session={session} redirectUrl="/acceder" />
+  </div>
+</MainLayout>

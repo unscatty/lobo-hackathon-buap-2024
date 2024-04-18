@@ -62,6 +62,8 @@ export default defineConfig<Theme>({
     [/^hw-([\w-]+)$/, ([_, c]) => `h-${c} w-${c}`],
     ['no-outline', '[outline:none]'],
     ['no-bg', '[background:none]'],
+    ['no-border', '[border:none]'],
+    ['card', 'hw-full border-3 border-primary p-4']
   ],
   presets: [
     presetUno(),

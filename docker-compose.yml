@@ -1,0 +1,53 @@
+version: '3.8'
+
+# Must pass an environment file to the docker-compose command
+# Example: docker-compose --env-file .env up
+
+services:
+  db:
+    image: postgres:16
+    container_name: lobo-hack-db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - '${EXTERNAL_DB_PORT}:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - lobo-hack-network
+
+  app:
+    container_name: lobo-hack-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SITE_URL: ${SITE_URL}
+        PORT: ${PORT}
+        PUBLIC_PREREGISTER_API_ENDPOINT: ${PUBLIC_PREREGISTER_API_ENDPOINT}
+        PUBLIC_API_ENDPOINT: ${SITE_URL}
+    environment:
+      DRIZZLE_DB_URL: ${DRIZZLE_DB_URL}
+    ports:
+      - '${PORT}:3000'
+    depends_on:
+      db:
+        condition: service_healthy
+        required: true
+    networks:
+      - lobo-hack-network
+
+networks:
+  lobo-hack-network:
+    driver: bridge
+
+volumes:
+  postgres-data:

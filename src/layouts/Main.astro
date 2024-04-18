@@ -5,6 +5,8 @@ import type { ClassyComponentProps } from '@/types/astro.types'
 import { type MetaHeadProps } from '@/types/layouts.types'
 import MetaHead from '@components/common/MetaHead.astro'
 import type { AstroBuiltinAttributes } from 'astro'
+import { AstroFont } from 'astro-font'
+import { commonFonts } from '@/config/fonts'
 
 interface Props extends MetaHeadProps, ClassyComponentProps {
   'body-class'?: string
@@ -34,7 +36,10 @@ const {
 <html lang="es" class="h-full">
   <!-- <Meta -->
   <MetaHead title={title} description={description} ogImage={ogImage}>
-    <slot name="head-meta" />
+    <slot name="head-meta">
+      <!-- Default Fonts -->
+      <AstroFont config={commonFonts} />
+    </slot>
   </MetaHead>
 
   <body class:list={['bg-base text-primary font-main', bodyClass, bodyClassList]}>

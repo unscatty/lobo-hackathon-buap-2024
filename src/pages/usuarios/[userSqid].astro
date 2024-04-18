@@ -1,0 +1,156 @@
+---
+import MainLayout from '@layouts/Main.astro'
+import { db } from '@server/db'
+import { getCurrentUserAndSqid } from '@server/services/user.service'
+import { SignOut } from 'auth-astro/components'
+import { getSession } from 'auth-astro/server'
+import * as teamsService from '@/services/teams.service'
+import type { UserSession } from '@server/models/session.model'
+import UserAvatar from '@components/user/UserAvatar.astro'
+import InvitationCode from '@components/teams/InvitationCode.vue'
+
+const { userSqid } = Astro.params
+
+const session = await getSession(Astro.request)
+
+// if (!session) {
+if (!session || !userSqid) {
+  return Astro.redirect('/acceder')
+}
+
+// Get user from database
+const currentUser = await getCurrentUserAndSqid(session, db)
+
+if (!currentUser) {
+  return Astro.redirect('/acceder')
+}
+
+// Validate user sqid
+if (currentUser.sqid !== userSqid) {
+  return Astro.redirect('/acceder')
+}
+
+const hasTeam = currentUser.teamId !== null
+
+let myTeamInfo: Awaited<ReturnType<(typeof teamsService)['myTeam']>>['data'] = null
+
+if (hasTeam) {
+  const { data } = await teamsService.myTeam(session as UserSession)
+
+  myTeamInfo = data
+}
+
+// Must use public env var
+const teamInvitationCode = `${import.meta.env.PUBLIC_API_ENDPOINT}/equipos/unirse/${myTeamInfo?.invitationCode}`
+const isMyTeam = myTeamInfo?.creator.id === currentUser.id
+---
+
+<MainLayout
+  title=""
+  description=""
+  class="flex grow flex-col"
+  body-class="flex flex-col h-full justify-between"
+  ><div
+    class="my-auto h-full w-full flex grow flex-col items-center justify-start px-4"
+    md="w-80% mx-auto"
+    lg="w-1/2"
+  >
+    <div class="mb-10 flex flex-col items-center gap-y-4" lg="flex-row gap-x-10">
+      <h1 class="block text-center text-2xl font-title" md="text-3xl">
+        ¡Hola, {currentUser.name || session.user?.name}!
+      </h1>
+      <SignOut
+        class:list={[
+          'relative',
+          'inline-block',
+          'text-center',
+          'tracking-[0.1em]',
+          'text-xs',
+          'font-bold',
+          'mx-auto',
+          'uppercase',
+          'px-2',
+          'py-2',
+          'border-2',
+          'border-solid',
+          'border-primary',
+          'text-primary',
+        ]}
+        hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
+        focus="btn-glitch1 text-base before:-scale-y-100"
+        data-glitch-text="Crear equipo"
+      >
+        Cerrar sesión
+      </SignOut>
+    </div>
+
+    <div class="no-border card flex flex-col">
+      <p font-title text-2xl mb-4>Mi equipo</p>
+      {
+        hasTeam ? (
+          <>
+            {myTeamInfo && (
+              <div class="flex flex-col gap-y-4">
+                {isMyTeam && (
+                  <div>
+                    <p mb-4>Código de invitación al equipo</p>
+                    <InvitationCode client:load source={teamInvitationCode} />
+                  </div>
+                )}
+
+                <p font-title text-lg>
+                  {myTeamInfo.name}
+                </p>
+                <p>{myTeamInfo.description}</p>
+                <p text-xl>Integrantes:</p>
+                <ul class="flex flex-col gap-y-4">
+                  <li class="flex items-center gap-x-4">
+                    <UserAvatar user={myTeamInfo.creator} class="hw-8" />
+                    <div class="i-solar:crown-star-broken hw-5" />
+                    <span text-lg>{myTeamInfo.creator.name}</span>
+                  </li>
+                  {myTeamInfo.members.map((member) => (
+                    <li class="flex items-center gap-x-4">
+                      <UserAvatar user={member} class="hw-8" />
+                      <span text-lg>{member.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
+        ) : (
+          <>
+            <p text-center py-2 text-lg>
+              Aún no estás en un equipo
+            </p>
+            <a
+              href="/equipos/crear"
+              class:list={[
+                'relative',
+                'inline-block',
+                'text-center',
+                'tracking-[0.3em]',
+                'text-sm',
+                'font-bold',
+                'mx-auto',
+                'uppercase',
+                'px-6',
+                'py-2',
+                'border-2',
+                'border-solid',
+                'border-primary',
+                'text-primary',
+              ]}
+              hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
+              focus="btn-glitch1 text-base before:-scale-y-100"
+              data-glitch-text="Crear equipo"
+            >
+              Crear equipo
+            </a>
+          </>
+        )
+      }
+    </div>
+  </div>
+</MainLayout>

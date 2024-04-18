@@ -1,0 +1,30 @@
+---
+import type { Session } from '@auth/core/types'
+import { db } from '@server/db'
+import { getCurrentUserWithSqid } from '@server/services/user.service'
+import UserAvatar from './UserAvatar.astro'
+
+interface Props {
+  session: Session
+}
+
+const { session } = Astro.props
+
+if (!session || !session.user) {
+  return null
+}
+
+const currentUser = await getCurrentUserWithSqid(session, db)
+
+if (!currentUser) {
+  return null
+}
+---
+
+{
+  currentUser && (
+    <a href={`/usuarios/${currentUser.sqid}`}>
+      <UserAvatar user={currentUser} />
+    </a>
+  )
+}

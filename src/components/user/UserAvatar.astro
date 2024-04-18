@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets'
+import type { User } from '@/server/db/schema'
+import type { ClassyComponentProps } from '@/types/astro.types'
+
+interface Props extends ClassyComponentProps {
+  user: Pick<User, 'name' | 'image'>
+}
+
+const { user, class: cssClass, 'class:list': cssClassList } = Astro.props
+---
+
+{
+  user && (
+    <>
+      {user.image ? (
+        <Image
+          src={user.image}
+          alt={user.name}
+          width={32}
+          height={32}
+          class:list={['hw-12 rounded-full', cssClass, cssClassList]}
+        />
+      ) : (
+        <span
+          class:list={[
+            'no-bg hw-12 inline-flex items-center justify-center rounded-full',
+            cssClass,
+            cssClassList,
+          ]}
+          ring="2 primary"
+        >
+          <span class="text-lg text-primary font-medium font-semibold leading-none">
+            {(user.name || 'A N')
+              .split(' ')
+              .map((name) => name[0])
+              .slice(0, 2)
+              .join('')}
+          </span>
+        </span>
+      )}
+    </>
+  )
+}

@@ -1,0 +1,191 @@
+---
+import MainLayout from '@layouts/Main.astro'
+import { db } from '@server/db'
+import { getCurrentUserWithSqid } from '@server/services/user.service'
+import { getSession } from 'auth-astro/server'
+import UserAvatar from '@components/user/UserAvatar.astro'
+
+const { code: teamInvitationCode } = Astro.params
+
+const session = await getSession(Astro.request)
+
+if (!session) {
+  return Astro.redirect('/acceder')
+}
+
+const currentUser = await getCurrentUserWithSqid(session, db)
+
+if (!currentUser) {
+  return Astro.redirect('/acceder')
+}
+
+if (currentUser.teamId || !teamInvitationCode) {
+  // User already has a team
+  return Astro.redirect(`/usuarios/${currentUser.sqid}`)
+}
+
+const team = await db.query.teams.findFirst({
+  columns: {
+    name: true,
+    description: true,
+  },
+  where: ({ invitationCode }, { eq }) => eq(invitationCode, teamInvitationCode),
+  with: {
+    members: {
+      columns: {
+        id: true,
+        image: true,
+        name: true,
+      },
+    },
+    creator: {
+      columns: {
+        id: true,
+        image: true,
+        name: true,
+      },
+    },
+  },
+})
+
+const filteredMembers = team?.members.filter((member) => member.id !== team.creator.id)
+
+const userDashboardUrl = `/usuarios/${currentUser.sqid}`
+---
+
+<MainLayout
+  title="Unirse a equipo"
+  description=""
+  class="flex grow flex-col"
+  body-class="flex flex-col h-full justify-between"
+>
+  <div
+    class="my-auto h-full w-full flex grow flex-col items-center justify-start px-4"
+    md="w-80% mx-auto"
+    lg="w-1/2"
+  >
+    {
+      team ? (
+        <div class="w-full flex flex-col">
+          <h1 font-title text-center text-2xl>
+            <span block text-xl>
+              Te han invitado al equipo:
+            </span>
+            <span block>{team.name}</span>
+          </h1>
+          <p text-center my-4>
+            {team.description}
+          </p>
+          <p text-xl my-4>
+            Integrantes:
+          </p>
+          <ul class="flex flex-col gap-y-4">
+            <li class="flex items-center gap-x-4">
+              <UserAvatar user={team.creator} class="hw-8" />
+              <div class="i-solar:crown-star-broken hw-5" />
+              <span text-lg>{team.creator.name}</span>
+            </li>
+            {filteredMembers?.map((member) => (
+              <li class="flex items-center gap-x-4">
+                <UserAvatar user={member} class="hw-8" />
+                <span text-lg>{member.name}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="my-2 flex flex-row-reverse justify-center gap-x-4">
+            {(filteredMembers ?? []).length < 4 ? (
+              <>
+                <astro-join-team
+                  data-redirect-url={userDashboardUrl}
+                  data-user-session={JSON.stringify(session)}
+                  data-invitation-code={teamInvitationCode}
+                >
+                  <button
+                    id="join-team"
+                    class:list={[
+                      'relative',
+                      'inline-block',
+                      'text-center',
+                      'tracking-[0.2em]',
+                      'text-sm',
+                      'font-bold',
+                      'mx-auto',
+                      'uppercase',
+                      'px-6',
+                      'py-2',
+                      'border-2',
+                      'border-solid',
+                      'border-primary',
+                      'text-primary',
+                    ]}
+                    hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
+                    focus="btn-glitch1 text-base before:-scale-y-100"
+                    data-glitch-text="Unirse al equipo"
+                  >
+                    Unirse al equipo
+                  </button>
+                </astro-join-team>
+
+                <a
+                  href={userDashboardUrl}
+                  class:list={[
+                    'relative',
+                    'inline-block',
+                    'text-center',
+                    'tracking-[0.3em]',
+                    'text-sm',
+                    'font-bold',
+                    'uppercase',
+                    'px-6',
+                    'py-2',
+                    'border-2',
+                    'border-solid',
+                    'border-danger',
+                    'text-danger',
+                    'hover:(bg-danger text-primary)',
+                  ]}
+                >
+                  Cancelar
+                </a>
+              </>
+            ) : (
+              <p>El equipo ya tiene el máximo de integrantes.</p>
+            )}
+          </div>
+        </div>
+      ) : (
+        <p>El código de invitación de equpo no es válido.</p>
+      )
+    }
+  </div>
+</MainLayout>
+
+<script>
+  import { join } from '@/services/teams.service'
+  import type { UserSession } from '@server/models/session.model'
+
+  class AstroJoinTeam extends HTMLElement {
+    constructor() {
+      super()
+
+      const redirectUrl = this.dataset.redirectUrl!
+      const userSession = JSON.parse(this.dataset.userSession!) as UserSession
+      const invitationCode = this.dataset.invitationCode!
+
+      const joinButton = this.querySelector('#join-team')
+
+      joinButton?.addEventListener('click', async () => {
+        const { error } = await join(userSession, invitationCode)
+
+        if (error) {
+          alert('Ocurrió un error al intentar unirse al equipo. Por favor, contacta a soporte.')
+          return
+        } else {
+          window.location.href = redirectUrl
+        }
+      })
+    }
+  }
+
+  customElements.define('astro-join-team', AstroJoinTeam)
+</script>

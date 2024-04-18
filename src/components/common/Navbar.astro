@@ -1,7 +1,7 @@
 ---
 import NavMobileMenu from './NavMobileMenu.vue'
-
-const { pathname } = Astro.url
+import { getSession } from 'auth-astro/server'
+import NavbarAvatar from '@components/user/NavbarAvatar.astro'
 
 export const navbarItems = [
   {
@@ -22,7 +22,9 @@ export const navbarItems = [
   },
 ]
 
-const isPreregisterPage = pathname.startsWith('/pre-registro')
+const session = await getSession(Astro.request)
+
+const isAuthenticated = session !== null
 ---
 
 <Fragment>
@@ -51,11 +53,13 @@ const isPreregisterPage = pathname.startsWith('/pre-registro')
           ))
         }
         <!-- Register button -->
-        {
-          !isPreregisterPage && (
-            <li>
+        <li>
+          {
+            isAuthenticated ? (
+              <NavbarAvatar session={session} />
+            ) : (
               <a
-                href="/pre-registro"
+                href="/acceder"
                 class:list={[
                   'relative',
                   'inline-block',
@@ -74,13 +78,13 @@ const isPreregisterPage = pathname.startsWith('/pre-registro')
                 ]}
                 hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
                 focus="btn-glitch1 text-base before:-scale-y-100"
-                data-glitch-text="Pre-registro"
+                data-glitch-text="Acceder"
               >
-                Pre-registro
+                Acceder
               </a>
-            </li>
-          )
-        }
+            )
+          }
+        </li>
         <!-- <a
                 href="/registro"
                 class:list={[
@@ -133,10 +137,14 @@ const isPreregisterPage = pathname.startsWith('/pre-registro')
           }
           <!-- Register button -->
           {
-            !isPreregisterPage && (
+            isAuthenticated ? (
+              <li class="w-full flex justify-center py-2">
+                <NavbarAvatar session={session} />
+              </li>
+            ) : (
               <li w-full>
                 <a
-                  href="/pre-registro"
+                  href="/acceder"
                   class:list={[
                     'relative',
                     'text-center',
@@ -151,9 +159,9 @@ const isPreregisterPage = pathname.startsWith('/pre-registro')
                   ]}
                   hover="btn-glitch1 before:text-secondary text-base before:-scale-y-100"
                   focus="btn-glitch1 text-base before:-scale-y-100"
-                  data-glitch-text="Pre-registro"
+                  data-glitch-text="Acceder"
                 >
-                  Pre-registro
+                  Acceder
                 </a>
               </li>
             )

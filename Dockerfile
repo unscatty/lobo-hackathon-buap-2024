@@ -49,7 +49,11 @@ COPY --from=build /app/dist ./dist
 
 COPY tsconfig.json .
 COPY public public
+COPY package.json .
+
+# Copy server migration files
+COPY src/server/db/migrations src/server/db/migrations
 
 EXPOSE ${PORT}
 
-CMD ["node", "./dist/server/entry.mjs"]
+CMD ["npm", "run", "start:migrate"]

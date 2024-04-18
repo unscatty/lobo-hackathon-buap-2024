@@ -1,0 +1,13 @@
+diff --git a/dist/utils.d.ts b/dist/utils.d.ts
+index 5d72ddf73f2bf01e379d27f8515164aa8e1a211b..571d498db82a3b9177731736219f4f686aeeb926 100755
+--- a/dist/utils.d.ts
++++ b/dist/utils.d.ts
+@@ -21,7 +21,7 @@ interface Config {
+     fallbackName?: string;
+     googleFontsURL?: string;
+     cssVariable?: string | boolean;
+-    fallback: 'serif' | 'sans-serif';
++    fallback: 'serif' | 'sans-serif' | 'monospace' | 'cursive' | 'fantasy' | 'system-ui';
+ }
+ interface Props {
+     config: Config[];
